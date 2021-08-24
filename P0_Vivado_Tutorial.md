@@ -38,6 +38,8 @@ ever forget how to start and complete a lab project.
 - Now click 'Finish'
 - Your screen should look like this:
 
+![Vivado Main Screen](images/vivado_main_screen.png)
+
 ## Create Design Source File
 
 Now we will add our first Verilog source file
