@@ -21,7 +21,7 @@ ever forget how to start and complete a lab project.
 
 - Start Vivado and create a new project.
 
-![Vivado Create Project Screen](../images/vivado_create_project_screen.png)
+![Vivado Create Project Screen](../images/p0/vivado_create_project_screen.png)
 
 - Follow the wizard. Browse and select a folder in which your project will be created.
 - Give a name to your project, for example Project0.
@@ -33,12 +33,12 @@ ever forget how to start and complete a lab project.
 ### Default Part
 - Search for part <i>"xc7a35ticpg236-1L."</i>
 
-![Vivado Basys3 Part](../images/vivado_basys3_part.png)
+![Vivado Basys3 Part](../images/p0/vivado_basys3_part.png)
 
 - Now click 'Finish'
 - Your screen should look like this:
 
-![Vivado Main Screen](../images/vivado_main_screen.png)
+![Vivado Main Screen](../images/p0/vivado_main_screen.png)
 
 ## Create Design Source File
 
@@ -51,7 +51,7 @@ Now we will add our first Verilog source file
 - Click "Finish."
 - It should look something like this:
 
-![Vivado Add Source](../images/vivado_add_source.png)
+![Vivado Add Source](../images/p0/vivado_add_source.png)
 
 - If you get a "Define Module" prompt, just click "OK".
 - File "top.v" is now in Design Sources under the Project Manager Window.
@@ -72,7 +72,7 @@ endmodule
 - This says I have one output signal, led, and one input signal, sw. The assign statement just tells the FPGA to make the output signal match the input signal.
 - When you are done it should look something like this:
 
-![Vivado Top Verilog](../images/vivado_top_verilog.png)
+![Vivado Top Verilog](../images/p0/vivado_top_verilog.png)
 
 - Save the file (Ctrl^S)
 
@@ -137,9 +137,9 @@ module testbench();
     // if the led is not "low" fail with an error message
     assert( led == 0) else $fatal(1, "LED==0 Failed");
     #100 //100 ns delay
-    sw = 1; //now we try setting the switch to “high”
+    sw = 1; //now we try setting the switch to “high"
     #100
-    //if the LED is not “high”, fail with an error message
+    //if the LED is not “high", fail with an error message
     assert( led == 1) else $fatal(1, "LED==1 Failed");
     #100 // another 100ns delay, just for funzies
     //hooray, we passed the test bench!
@@ -157,7 +157,7 @@ endmodule
 
 Now we should have all of our source files. Your setup should look like the following:
 
-![Vivado Full Setup](../images/vivado_full_setup.png)
+![Vivado Full Setup](../images/p0/vivado_full_setup.png)
 
 ## Running a Simulation
 
@@ -167,17 +167,17 @@ Now we are going to run our simulation, and observe the outcomes of our testing.
 - This will take a few seconds
 - When it is finished, you should get a window that looks something like this:
 
-![Vivado Finished Simulation](../images/vivado_finished_simulation.png)
+![Vivado Finished Simulation](../images/p0/vivado_finished_simulation.png)
 
 - Note the `@@@Passed` in the bottom window. This means our simulation, well, passed.
 - Now let’s try to understand <i>why</i> it passed.
 - Right click on `'led'` in the Objects Window and select 'Add to Wave Window'.
 - You should now have a black window with red and green lines on the right-hand side of Vivado. It should look something like this:
 
-![Vivado Waveform Window](../images/vivado_waveform_window.png)
+![Vivado Waveform Window](../images/p0/vivado_waveform_window.png)
 
-- Repeat the process for sw. Right-click and “Add to Wave Window”
-- Now in our the “Untitled” wave window on the right, you can view the waveform
+- Repeat the process for sw. Right-click and “Add to Wave Window"
+- Now in our the “Untitled" wave window on the right, you can view the waveform
 - Waveforms allow us to observe the signals changing through time
 - Time moves from left to right, we start at `0ns`, and move to `500ns`.
 - Red lines means that the simulation doesn’t know the value for a signal. Before `100ns`, we haven’t assigned `sw` to anything, so the simulation doesn’t have a value for it. Because the simulation doesn’t know the value for the input `sw`, it can’t figure out the value for the output `led`.
@@ -201,7 +201,7 @@ in our source file.
 
 - Now that we’re (mostly) sure our logic is correct, we can move on to "Synthesis" and programming the FPGA.
 - On the left hand menu select "`SYNTHESIS`" -> <i>"Run Synthesis."</i> If prompted where to launch runs, select "Launch runs on local host". This tells Vivado to run synthesis on your local machine.
-- Even for simple designs, synthesis takes a surprisingly long time. For industrial designs, it can take days. This process translates our verilog code into `LUTs`, or “Look-Up Tables”. It can also translate our code into basic logic gates. We’ll discuss this later in class.
+- Even for simple designs, synthesis takes a surprisingly long time. For industrial designs, it can take days. This process translates our verilog code into `LUTs`, or “Look-Up Tables". It can also translate our code into basic logic gates. We’ll discuss this later in class.
 - After the Synthesis is complete, select <i>"Run Implementation"</i>. This is also called "Auto Place and Route". This process decides which locations within the FPGA to use for each `LUT`, and how best to connect then.
 - After the Implementation is complete, select <i>"Generate Bitstream"</i>. This generates a configuration file that is read by the `FPGA` when it boots up to decide how to configure itself.
 - After the Generate Bitstream is complete, select "Open Hardware Manager".
@@ -216,16 +216,16 @@ This process will (finally) program the FPGA.
 - Now select "Programming and Debug" -> "Open Hardware Manager" -> "Program Device" -> 'xc7a35t_0'. (Your device might be named differently)
 - You will need to select your 'bitstream' file. Xilinx did not make this easy. The bitstream is located at './project_0.runs/impl_1/top.bit' within your project. See the example below:
 
-![Vivado Program Device](../images/vivado_program_device.png)
+![Vivado Program Device](../images/p0/vivado_program_device.png)
 
-- With the bitstream selected, hit “program”. This should only take a few seconds.
+- With the bitstream selected, hit “program". This should only take a few seconds.
 
 ## Testing your FPGA
 
 You should now be able to test your FPGA. When you flip the right-most switch, the
 corresponding LED should also toggle.
 
-![Basys3 Programmed](../images/basys3_programmed.png)
+![Basys3 Programmed](../images/p0/basys3_programmed.png)
 
 This concludes the Vivado tutorial lab.
 
