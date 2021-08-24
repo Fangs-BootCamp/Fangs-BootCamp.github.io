@@ -20,7 +20,9 @@ ever forget how to start and complete a lab project.
 ## Create a project
 
 - Start Vivado and create a new project.
+
 ![Vivado Create Project Screen](images/vivado_create_project_screen.png)
+
 - Follow the wizard. Browse and select a folder in which your project will be created.
 - Give a name to your project, for example Project0.
 - Check "Create project subdirectory."
@@ -32,6 +34,7 @@ ever forget how to start and complete a lab project.
 - Search for part <i>"xc7a35ticpg236-1L."</i>
 
 ![Vivado Basys3 Part](images/vivado_basys3_part.png)
+
 - Now click 'Finish'
 - Your screen should look like this:
 
@@ -45,7 +48,9 @@ Now we will add our first Verilog source file
 - <b>Select 'System Verilog' from the 'File type' Menu.</b> The "System" Verilog extension lets us for modern Verilog features. We will discuss this more later in the class. If you forget to do this, you can modify the File type later through the ‘properties’ menu.
 - Click "Finish."
 - It should look something like this:
+
 ![Vivado Add Source](images/vivado_add_source.png)
+
 - If you get a "Define Module" prompt, just click "OK".
 - File "top.v" is now in Design Sources under the Project Manager Window.
 
@@ -64,7 +69,9 @@ endmodule
 
 - This says I have one output signal, led, and one input signal, sw. The assign statement just tells the FPGA to make the output signal match the input signal.
 - When you are done it should look something like this:
-![Vivado Top Verilog](images/vivado_top.verilog.png)
+
+![Vivado Top Verilog](images/vivado_top_verilog.png)
+
 - Save the file (Ctrl^S)
 
 ## Create Constraints File
@@ -147,6 +154,7 @@ endmodule
 ### Checkpoint
 
 Now we should have all of our source files. Your setup should look like the following:
+
 ![Vivado Full Setup](images/vivado_full_setup.png)
 
 ## Running a Simulation
@@ -156,12 +164,16 @@ Now we are going to run our simulation, and observe the outcomes of our testing.
 - On the left hand menu select <i>"SIMULATION" -> "Run Simulation"</i>, then "Run Behavioral Simulation."
 - This will take a few seconds
 - When it is finished, you should get a window that looks something like this:
+
 ![Vivado Finished Simulation](images/vivado_finished_simulation.png)
+
 - Note the `@@@Passed` in the bottom window. This means our simulation, well, passed.
 - Now let’s try to understand <i>why</i> it passed.
 - Right click on `'led'` in the Objects Window and select 'Add to Wave Window'.
 - You should now have a black window with red and green lines on the right-hand side of Vivado. It should look something like this:
+
 ![Vivado Waveform Window](images/vivado_waveform_window.png)
+
 - Repeat the process for sw. Right-click and “Add to Wave Window”
 - Now in our the “Untitled” wave window on the right, you can view the waveform
 - Waveforms allow us to observe the signals changing through time
@@ -201,7 +213,9 @@ This process will (finally) program the FPGA.
 - This should automatically detect the Basys
 - Now select "Programming and Debug" -> "Open Hardware Manager" -> "Program Device" -> 'xc7a35t_0'. (Your device might be named differently)
 - You will need to select your 'bitstream' file. Xilinx did not make this easy. The bitstream is located at './project_0.runs/impl_1/top.bit' within your project. See the example below:
+
 ![Vivado Program Device](images/vivado_program_device.png)
+
 - With the bitstream selected, hit “program”. This should only take a few seconds.
 
 ## Testing your FPGA
