@@ -1,5 +1,12 @@
 # Project 6: UART
 
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    1. [UART](#uart-background)
+    2. [Clock Domains](#clock-domains)
+    3. [Connecting over UART with Screen](#connect-uart)
+
 ## E210/B441, Spring 2020 Version 2020.
 
 ## Autograder Due: 11:59 PM Monday, April 13, 2020
@@ -8,31 +15,25 @@
 
 ## Canvas by 11:59 PM Monday, April 13, 2020.
 
-## Overview
+## Overview <a name="overview"></a>
 
-## In this lab you will practice using state machines by designing and implementing a UART (or
+In this lab you will practice using state machines by designing and implementing a UART (or
+RS232) interface.
 
-## RS232) interface.
+## Background <a name="background"></a>
 
-## Background
+### UART <a name="uart-background"></a>
 
-## UART
+UART is short for “Universal Asynchronous Receiver / Transmitter”. It allows serial
+communication between two devices. In our case we’re using it to communicate between the
+Host machine and the FPGA. There are many different flavors of UART, but we will be using
+the RS-232 standard.
 
-## UART is short for “Universal Asynchronous Receiver / Transmitter”. It allows serial
+Side note: We’re actually using RS-232 encoded over USB. Luckily, there is a chip on the
+Basys3 board that is translating the USB into RS-232 for us.
 
-## communication between two devices. In our case we’re using it to communicate between the
-
-## Host machine and the FPGA. There are many different flavors of UART, but we will be using
-
-## the RS-232 standard.
-
-## Side note: We’re actually using RS-232 encoded over USB. Luckily, there is a chip on the
-
-## Basys3 board that is translating the USB into RS-232 for us.
-
-## UART (RS-232) has two wires, RX (receive) and TX (transmit). They are connected as follows,
-
-## where the TX of one device is the RX of another, and vice versa.
+UART (RS-232) has two wires, RX (receive) and TX (transmit). They are connected as follows,
+where the TX of one device is the RX of another, and vice versa.
 
 
 #### UART is composed of 1+8+1 bit “frames”. The transmitter keeps the TX wire high when not
@@ -80,7 +81,7 @@
 #### high for 104us (representing the passing of the stop bit).
 
 
-### Clock Domains
+### Clock Domains <a name="clock-domains"></a>
 
 #### When crossing clock domains ( ie going between the desktop computer clock and the FPGA’s
 
@@ -133,7 +134,7 @@
 
 #### );
 
-### Connecting over UART with Screen
+### Connecting over UART with Screen <a name="connect-uart"></a>
 
 #### You can use the Unix program screen to connect to your FPGA over UART. You need to
 
