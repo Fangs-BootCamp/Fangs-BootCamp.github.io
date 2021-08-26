@@ -1,22 +1,38 @@
 # Project 1: Demultiplexer
 
-## E210/B441, Spring 2021 Version 2021.2
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [Decoder](#decoder)
+        - [Block Diagram](#block-diagram)
+    - [Demultiplexer](#demultiplexer)
+    - [Verilog Submodules](#verilog-submodules)
+    - [Tasks in a Testbench](#tasks-in-a-testbench)
+3. [Assignment Description](#assignment-description)
+    - [Decoder](#decoder)
+    - [Demultiplexer](#demultiplexer)
+    - [Top](#top)
+    - [Testbenches](#testbenches)
+    - [Constraints](#constraints)
+4. [Evaluation](#evaluation)
 
-## Autograder Due: 11:59pm, Friday, Jan 29th
+### E210/B441, Spring 2021 Version 2021.2
 
-## Demo Due: NO DEMO
+### Autograder Due: 11:59pm, Friday, Jan 29th
 
-## Overview
+### Demo Due: NO DEMO
+
+## Overview <a name="overview"></a>
 
 For this project, you will design and implement a 3-to-8 Demultiplexer. Demultiplexers help
 control the logical flow of the digital circuit, and are used in addressing memory and many types
 of data communication.
 
-## Background
+## Background <a name="background"></a>
 
 To understand demultiplexers, one should first understand a decoder.
 
-### Decoder
+### Decoder <a name="decoder"></a>
 
 A decoder is a combinational circuit with n inputs and 2 n^ outputs. For each combination of
 inputs, one and only one output is logic 1, while all the other outputs are logic 0. For example, a
@@ -90,14 +106,14 @@ trace the wires (green lines) you will see the d1 is again equal to `~a & b`.
 Notice this is the exact same combination of `NOT` and `AND` that is expressed in the boolean
 equations.
 
-#### Block Diagram
+#### Block Diagram <a name="block-diagram"></a>
 
 We can abstract our decoder into a "block" that only shows the inputs and outputs. This will
 make it easier to use this block later. The inputs are on the left and the outputs are on the right.
 
 ![Decoder](../images/p2/decoder.png)
 
-### Demultiplexer
+### Demultiplexer <a name="demultiplexer"></a>
 
 A demultiplexer is a combinational circuit with <i>1</i> data input, <i>n</i> select inputs and <i>2<sup>n</sup></i> outputs. For
 each combination of select inputs, the data is transferred to the selected output, while the other
@@ -127,7 +143,7 @@ What we see is that if `e==0` all of the outputs are always `0`. If `e==1`, then
 the decoder exactly. So, that suggests we can use the decoder to generate some of the signals
 required for the demultiplexer.
 
-### Verilog Submodules
+### Verilog Submodules <a name="verilog-submodules"></a>
 
 Submodules in Verilog allow you to use smaller modules as building blocks for constructing
 more complex modules. Recall from the lecture that we can construct a TwoBelt Alarm system
@@ -210,7 +226,7 @@ module TwoBeltAlarm(
 endmodule
 ```
 
-### Tasks in a Testbench
+### Tasks in a Testbench <a name="tasks-in-a-testbench"></a>
 
 Using tasks to create an exhaustive testbench will prove useful as the course projects increase
 in difficulty. You may wish to use tasks in this project to begin understanding how they work as
@@ -282,14 +298,14 @@ begin
 end
 ```
 
-## Assignment Description
+## Assignment Description <a name="assignment-description"></a>
 
 For this assignment, you will need to create a 3-8 decoder, then use it as a submodule to create
 a 3-8 demultiplexer. You will also need to create a corresponding testbench.
 
 ![Three To Eight Demultiplexer](../images/p2/three_to_eight_demultiplexer.png)
 
-### Decoder
+### Decoder <a name="decoder"></a>
 
 First, start by creating a SystemVerilog file named decoder.sv defined as follows:
 
@@ -305,7 +321,7 @@ You will need to assign the correct expressions for the outputs `d0-d7` in a sim
 `a=0,b=0,c=0, d1` should be active when `a=0,b=0,c=1,` and `d7` should be active when
 `a=1,b=1,c=1`.
 
-### Demultiplexer
+### Demultiplexer <a name="demultiplexer"></a>
 
 Now create a `demux.sv` that will serve as your demultiplexer by including the `e` signal.
 
@@ -331,7 +347,7 @@ Your demultiplexer module will need to modify the outputs for the decoder's `d0-
 its own `d0-d7` outputs. Remember the corresponding `d` output should be `0` when `e==0`, and
 the same as the original decoder when `e == 1`.
 
-### Top
+### Top <a name="top"></a>
 
 Please use the following `top.sv`. This uses arrays, which we will discuss more in class later.
 
@@ -362,7 +378,7 @@ demux d0 (
 endmodule
 ```
 
-### Testbenches
+### Testbenches <a name="testbenches"></a>
 
 You will need to create two testbenches to test your code, one for decoder and one for demux.
 
@@ -471,7 +487,7 @@ We encourage you to use tasks to aid in testing.
 
 If you miss an input combination, the autograder will likely detect it during testing.
 
-### Constraints
+### Constraints <a name="constraints"></a>
 
 You will also need to reconfigure your constraints file so it uses the correct assignments of
 switches and LEDs. Rather than writing your own, we recommend you copy the default
@@ -483,7 +499,7 @@ constraints file from here:
 And edit it for our needs. Specifically, you will need to uncomment the appropriate line to enable
 the various switches and leds needed.
 
-## Evaluation
+## Evaluation <a name="evaluation"></a>
 
 <b>NOTE: Due to COVID and working remotely, we will skip the demonstration portion of this
 project for Spring'21.</b>

@@ -1,10 +1,28 @@
 # Project 0: Logic Gates
 
-## E210/B441, Spring 2021 Version 2021.0
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [AND Gate](#and-gate)
+    - [OR Gate](#or-gate)
+    - [NOT Gate](#not-gate)
+3. [Launching Vivado](#launching-vivado)
+4. [Creating a Vivado Project](#creating-a-vivado-project)
+5. [Creating a Design Source File](#creating-a-design-source-file)
+6. [Creating a Constraints File](#creating-a-constraints-file)
+7. [Create Simulation File](#create-simulation-file)
+8. [Project Checkpoint](#project-checkpoint)
+9. [Running a Simulation](#running-a-simulation)
+10. [Autograder Submission](#autograder-submission)
+11. [Hardware Synthesis](#hardware-synthesis)
+12. [Programming the FPGA](#programming-the-fpga)
+13. [Testing your FPGA](#testing-your-fpga)
 
-## Due Date: None
+### E210/B441, Spring 2021 Version 2021.0
 
-## Overview
+### Due Date: None
+
+## Overview <a name="overview"></a>
 
 This tutorial shows the steps in a digital design project using Xilinx Vivado design suite and
 Digilent Basys 3 FPGA board. You will learn how to use Vivado tools to create a design and
@@ -18,9 +36,9 @@ gate. The logic schematic of the digital system is given below.
 
 ![Project Schematic](../images/p1/project_schematic.png)
 
-## Background
+## Background <a name="background"></a>
 
-### AND Gate
+### AND Gate <a name="and-gate"></a>
 
 The truth table for a 2-input AND gate is:
 
@@ -37,7 +55,7 @@ And is denoted by the following schematic symbol:
 
 The verilog keyword is: <b>&</b>
 
-### OR Gate
+### OR Gate <a name="or-gate"></a>
 
 The truth table for a 2 input OR gate is:
 
@@ -54,7 +72,7 @@ And is denoted by the following schematic symbol:
 
 The verilog keyword is: <b>|</b>
 
-### NOT Gate
+### NOT Gate <a name="not-gate"></a>
 
 The truth table for a 1-input NOT gate is:
 
@@ -69,7 +87,7 @@ And is denoted by the following schematic symbol:
 
 The verilog keyword is: <b>~</b>
 
-## Launching Vivado
+## Launching Vivado <a name="launching-vivado"></a>
 
 To launch Vivado, you will need to be logged into one of the Luddy Linux Machines. These are
 available in 4111 IF(Luddy).
@@ -82,7 +100,7 @@ To launch Vivado, you should only need to type 'vivado' into the command line:
 
 ![Terminal Screenshot](../images/p1/terminal_screenshot.png)
 
-## Creating a Vivado Project
+## Creating a Vivado Project <a name="creating-a-vivado-project"></a>
 
 - Start Vivado and create a new project.
 
@@ -103,7 +121,7 @@ To launch Vivado, you should only need to type 'vivado' into the command line:
 
 ![Vivado Main Screen](../images/p1/vivado_main_screen.png)
 
-## Creating a Design Source File
+## Creating a Design Source File <a name="creating-a-design-source-file"></a>
 
 Now we will add our first SystemVerilog source file
 
@@ -145,7 +163,7 @@ endmodule
 
 - Save the file (`Ctrl^S`)
 
-## Creating a Constraints File
+## Creating a Constraints File <a name="creating-a-constraints-file"></a>
 
 Now we will add our first constraints source file. This tells Vivado how the inputs and outputs of
 the verilog code map to the real inputs and outputs of the Basys3 board.
@@ -185,7 +203,7 @@ set_property PACKAGE_PIN U19 [get_ports {myNOT}]
 Later in the semester, we will make use of the `"Basys3_Master.xdc"` constraints file uploaded
 on the website. It can be found under the `Downloads` quick link.
 
-## Create Simulation File (AKA a 'testbench')
+## Create Simulation File (AKA a 'testbench') <a name="create-a-simulation-file"></a>
 
 We are now going to run a simulation to ensure that our verilog code is correct.
 
@@ -258,13 +276,13 @@ endmodule
 
 - Save the file (`Ctrl^S`)
 
-## Project Checkpoint
+## Project Checkpoint <a name="project-checkpoint"></a>
 
 Now we should have all of our source files. Your setup should look like the following:
 
 ![Vivado Finished Project](../images/p1/vivado_finished_project.png)
 
-## Running a Simulation
+## Running a Simulation <a name="running-a-simulation"></a>
 
 Now we are going to run our simulation, and use the testbench to drive inputs and observe the
 outputs of our verilog module.
@@ -325,7 +343,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 
 - Waveform simulations are a great way to visualize and understand what is happening when problems arise. We will use them frequently in this class. The autograder uses a command-line version of these same simulations for its tests.
 
-## Autograder Submission
+## Autograder Submission <a name="autograder-submission"></a>
 
  We'll be using an automatic testbench and grading system (Autograder) for the Verilog in this
  course. It will help you debug your code and give you live feedback on your current score for
@@ -349,7 +367,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 
 - This page will display the `score` for both the modules that will be used for the `FPGA` (`top.sv`) and also the testbench modules that are used to test the code (`top_tb.sv`).
 
-## Hardware Synthesis
+## Hardware Synthesis <a name="hardware-synthesis"></a>
 
 - Now that we're (mostly) sure our logic is correct, we can move on to "Synthesis". Synthesis is roughly equivalent to "Compiling" for FPGAs.
 - On the left hand menu select "`SYNTHESIS`" -> <i>"Run Synthesis."</i> If prompted where to launch runs, select "Launch runs on local host'. This tells Vivado to run synthesis on your local machine.
@@ -358,7 +376,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 - After the Implementation is complete, select <i>"Generate Bitstream"</i>. This generates a configuration file that is read by the `FPGA` when it boots up to decide how to configure itself.
 - After the Generate Bitstream is complete, select "Open Hardware Manager".
 
-## Programming the FPGA
+## Programming the FPGA <a name="programming-the-fpga"></a>
 
  This process will (finally) program the FPGA.
 
@@ -372,7 +390,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 
 - With the bitstream selected, hit "program". This should only take a few seconds.
 
-## Testing your FPGA
+## Testing your FPGA <a name="testing-your-fpga"></a>
 
  You should now be able to test your FPGA. When you flip the right-most switches, the
  corresponding LEDs should also toggle.

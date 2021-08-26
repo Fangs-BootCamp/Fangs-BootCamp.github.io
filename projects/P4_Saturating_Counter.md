@@ -1,19 +1,33 @@
 # Project 3: 2-Bit Saturating Counter
 
-## E210/B441, Spring 2021 Version 2021.
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [Saturating Counters](#saturating-counters)
+    - [State Machine Verilog Template](#state-machine-verilog-template)
+    - [Testbenches for Sequential Logic](#testbenches-for-sequential-logic)
+3. [Assignment Description](#assignment-description)
+    - [Saturating Counter](#saturating-counter)
+    - [Debouncing](#debouncing)
+    - [Top-Level](#top-level)
+    - [Testbench](#testbench)
+    - [Constraints](#constraints)
+4. [Evaluation](#evaluation)
 
-## Autograder Due: 11:59PM, Friday February 26th
+### E210/B441, Spring 2021 Version 2021.
 
-## Demo Due: 11:59PM, Friday February 26th
+### Autograder Due: 11:59PM, Friday February 26th
 
-## Overview
+### Demo Due: 11:59PM, Friday February 26th
+
+## Overview <a name="overview"></a>
 
 In this lab you practice designing simple state machines by implementing a 2-bit saturating
 counter.
 
-## Background
+## Background <a name="background"></a>
 
-### Saturating Counters
+### Saturating Counters <a name="saturating-counters"></a>
 
 A 2-bit saturating counter is a logic block that is commonly used in modern computers for
 predicting the outcome of branch instructions. (Don’t worry, you don’t need to know about
@@ -33,7 +47,7 @@ should happen on each rising edge of the clock.
 
 The output count should match the internal count value of the saturating counter.
 
-### State Machine Verilog Template
+### State Machine Verilog Template <a name="state-machine-verilog-template"></a>
 
 Building state machines in Verilog requires **closely following a special form** , or template, that
 we have demonstrated below. <b>Be warned: the tools do not enforce this template, it is up to you
@@ -116,7 +130,7 @@ module SimpleStateMachine(
 endmodule
 ```
 
-### Testbenches for Sequential Logic
+### Testbenches for Sequential Logic <a name="testbenches-for-sequential-logic"></a>
 
 When constructing testbenches for sequential logic, you may find the `@(negedge clk)`
 formulation helpful. This will execute the simulation <ins>until the next falling edge of the clock
@@ -202,11 +216,11 @@ module testbench;
 endmodule
 ```
 
-## Assignment Description
+## Assignment Description <a name="assignment-description"></a>
 
 For this assignment, you will create and demonstrate a saturating counter.
 
-### Saturating Counter
+### Saturating Counter <a name="saturating-counter"></a>
 
 Your first task is to create a Verilog file named saturating_counter.sv with a module
 defined as follows:
@@ -223,17 +237,17 @@ output logic [1:0] count
 
 This module should implement a saturating counter as described above.
 
-### Debouncing
+### Debouncing <a name="debouncing"></a>
 
 Sometimes digital buttons (like on the Basys3) don’t go straight between logic values, but
 instead “bounce” around while you are trying to change them.
 [More Information about Bouncing](https://www.allaboutcircuits.com/technical-articles/switch-bounce-how-to-deal-with-it/)
 
-###### Please add this Verilog module to your project to help “debounce” incoming signals.
+Please add this Verilog module to your project to help “debounce” incoming signals.
 
 [debounce.sv](https://raw.githubusercontent.com/ENGR210/downloads/master/debounce.sv)
 
-### Top-Level
+### Top-Level <a name="top-level"></a>
 
 Please use the following `top.sv`. It maps reset to `btnC`, `up_down` to `sw[0]`, and enable
 to `btnD`. It also debounces and limits the enable signal.
@@ -305,14 +319,14 @@ end
 endmodule
 ```
 
-### Testbench
+### Testbench <a name="testbench"></a>
 
 For this project, you only need to create a testbench for your saturating counter. It should be
 named `saturating_counter_tb.sv.`
 
 <ins>Remember to select “System Verilog” from the “File Type” drop-down menu.</ins>
 
-### Constraints
+### Constraints <a name="constraints"></a>
 
 We recommend you copy the default constraints file from here:
 
@@ -321,7 +335,7 @@ We recommend you copy the default constraints file from here:
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
 
-## Evaluation
+## Evaluation <a name="evaluation"></a>
 
 <b>NOTE: Due to COVID and working remotely, we will delay the demonstration portion of this
 project until in-person labs resume.</b>

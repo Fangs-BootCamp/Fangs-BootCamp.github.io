@@ -1,20 +1,41 @@
 # Project 2: Arithmetic Logic Unit
 
-## E210/B441, Spring 2021 Version 2021.
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [Arrays](#arrays)
+    - [Case Statements](#case-statements)
+    - [Combinational Always Blocks](#combinational-always-block)
+    - [Flip-Flop Always Blocks](#flip-flop-always-blocks)
+    - [Flip-Flop Always Blocks with Enable](#flip-flop-always-blocks-with-enable)
+    - [ALU](#alu)
+        - [Arithmetic](#arithmetic)
+        - [Logic](#logic)
+        - [Operation Encoding](#operation-encoding)
+        - [Carry](#carry)
+        - [Overflow](#overflow)
+3. [Assignment Description](#assignment-description)
+    - [8-bit-ALU](#eight-bit-alu)
+    - [Top-Level](#top-level)
+    - [Testbench](#testbench)
+    - [Constraints](#constraints)
+4. [Evaluation](#evaluation)
 
-## Autograder Due: 11:59pm, Friday, February 12th
+### E210/B441, Spring 2021 Version 2021.
 
-## Demo Due: NO DEMO
+### Autograder Due: 11:59pm, Friday, February 12th
 
-## Overview
+### Demo Due: NO DEMO
+
+## Overview <a name="overview"></a>
 
 You will design and implement an 8-bit <b>Arithmetic Logic Unit (ALU)</b>. You can use the same
 design procedure to expand to a functionally complete 16-, or 32-bit ALU. You will also get to
 implement a basic <b>D Flip-Flop</b>. Flip Flops are used to add state to your digital systems.
 
-## Background
+## Background <a name="background"></a>
 
-###### Arrays
+###### Arrays <a name="arrays"></a>
 
 For the last project, we expressed the d outputs of the decoder separately:
 
@@ -84,7 +105,7 @@ number is two bits wide, and the second number is only 1 bit wide.
 wire [2:0] wire6 = { 2’b1, 1’b0 } ; // binary 01 & 1
 ```
 
-###### Case Statements
+###### Case Statements <a name="case-statements"></a>
 
 Another piece of new Verilog for this lab is the case statement. Just like C, verilog lets you use
 case statements. The syntax looks something like this:
@@ -99,7 +120,7 @@ case(sel)
 endcase
 ```
 
-###### Combinational Always Blocks
+###### Combinational Always Blocks <a name="combinational-always-blocks"></a>
 
 Unfortunately, you cannot use case statements with assign, it must be inside a special block
 called `always_comb`. The comb is short for combinational. `always_comb` blocks look like
@@ -143,7 +164,7 @@ end
 This lets us set out to one of 4 values based on the value of `sel` (or select). This is one way to
 build a 4-1 multiplexer.
 
-###### Flip-Flop Always Blocks
+###### Flip-Flop Always Blocks <a name="flip-flop-always-block"></a>
 
 One final piece is how to build D Flip Flops in Verilog. Here again we make use of an always
 block, but this one looks a little different.
@@ -186,7 +207,7 @@ expected. <b>If you get a warning that says "inferring latch", you broke the rul
 There are several other always blocks in Verilog. For now, we recommend you stick with the
 two above.
 
-###### Flip-Flop Always Blocks with Enable
+###### Flip-Flop Always Blocks with Enable <a name="flip-flop-always-blocks-with-enable"></a>
 
 The previous flip-flop block always updated its state on every rising edge of clk. However, often
 you want to control that slightly, so that it only updates the value when you enable it. For that,
@@ -207,13 +228,13 @@ begin
 end
 ```
 
-##### ALU
+##### ALU <a name="alu"></a>
 
 You will build an ALU that takes two inputs, a and b, and produces three outputs, r, c and v.
 Additionally, another input s will select which type of operation should be performed. Your ALU
 will be capable of both Arithmetic and Logical operations.
 
-###### Arithmetic
+###### Arithmetic <a name="arithmetic"></a>
 
 Your ALU should be capable of both **addition** and **subtraction**. We’ll assume you’ve seen
 digital addition before. Subtraction in the digital world can be implemented using addition and
@@ -249,24 +270,24 @@ In addition, your ALU should be capable of several other helpful functions:
 **Transfer** : 𝑟 = 𝑎
 **Test** : 𝑟 = (𝑎== 0 )
 
-###### Logic
+###### Logic <a name="logic"></a>
 
 Your ALU should also be capable of 4 basic bitwise logic operations, **AND** , **OR** , **NOT** , and **XOR**.
 These are computed to all bits of a and b.
 
-###### Operation Encoding
+###### Operation Encoding <a name="operation-encoding"></a>
 
 To select which operand your ALU should perform, you will need to read in a 4-bit "operation
 select" value ( here named s). The mapping of s values to operations is given below.
 
 ![ALU Operations](../images/p3/alu_operations.png)
 
-###### Carry
+###### Carry <a name="carry"></a>
 
 Recall that 8-bit unsigned addition can result in a 9-bit sum. Therefore, the highest bit should be
 returned in the c bit, short for Carry. <ins>This bit must be 0 for transfer, test and all logic operations.</ins>
 
-###### Overflow
+###### Overflow <a name="overflow"></a>
 
 Additionally, signed arithmetic can result in overflows. This can occur when adding two positive
 numbers, and receiving a negative result. Or when adding two negative numbers resulting in a
@@ -305,9 +326,9 @@ project, you will need to compute a similar overflow equation for subtraction:
 wire oVerflowSubtract = ??? ;
 ```
 
-### Assignment Description
+### Assignment Description <a name="assignment-description"></a>
 
-##### 8-bit ALU
+##### 8-bit ALU <a name="eight-bit-alu"></a>
 
 Create a Verilog file named alu.sv which defines a module as follows:
 
@@ -326,7 +347,7 @@ The logic keyword is optional and can be omitted.
 
 Your task is to implement the ALU as per the specifications above.
 
-##### Top-Level
+##### Top-Level <a name="top-level"></a>
 
 Please use the following `top.sv`.
 
@@ -374,14 +395,14 @@ As some of the LED values are unused, we assign them to 0 (off).
 
 <ins><i>Remember to select "System Verilog" from the "File Type" drop-down menu.</i></ins>
 
-##### Testbench
+##### Testbench <a name="testbench"></a>
 
 For this project, you only need to create a testbench for your ALU. It should be named
 `alu_tb.sv`.
 
 <ins><i>Remember to select "System Verilog" from the "File Type" drop-down menu.</i></ins>
 
-##### Constraints
+##### Constraints <a name="constraints"></a>
 
 We recommend you copy the default constraints file from here:
 
@@ -390,7 +411,7 @@ We recommend you copy the default constraints file from here:
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
 
-### Evaluation
+### Evaluation <a name="evaluation"></a>
 
 <b>NOTE: Due to COVID and working remotely, we will delay the demonstration portion of this
 project until in-person labs resume.</b>

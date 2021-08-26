@@ -3,27 +3,27 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
-    1. [Postfix Calculators](#postfix-calculators)
-    2. [Stacks In Hardware](#stacks-in-hardware)
-    3. [Verilog Memory](#verilog-memory)
+    - [Postfix Calculators](#postfix-calculators)
+    - [Stacks In Hardware](#stacks-in-hardware)
+    - [Verilog Memory](#verilog-memory)
 3. [Assignment Description](#assignment-description)
-    1. [UART (Old)](#uart-old)
-    2. [Synchronizer (Old)](#synchronizer-old)
-    3. [SevSegDriver (Optional)](#sevsegdriver-optional)
-    4. [Stack (New)](#stack-new)
-    5. [Calculator (New)](#calculator-new)
-    6. [Top (New)](#top-new)
-    7. [Testbench](#testbench)
-    8. [Constraints](#constraints)
+    - [UART (Old)](#uart-old)
+    - [Synchronizer (Old)](#synchronizer-old)
+    - [SevSegDriver (Optional)](#sevsegdriver-optional)
+    - [Stack (New)](#stack-new)
+    - [Calculator (New)](#calculator-new)
+    - [Top (New)](#top-new)
+    - [Testbench](#testbench)
+    - [Constraints](#constraints)
 4. [Python Helper Script](#python-helper-script)
 5. [Evaluation](#evaluation)
 6. [Appendix I: Reference UART](appendix-i-reference-uart)
 
-## E210/B441, Spring 2020 Version 2020.
+### E210/B441, Spring 2020 Version 2020.
 
-## Autograder Due: 11:59pm, Monday, April 27, 2020
+### Autograder Due: 11:59pm, Monday, April 27, 2020
 
-## Demo Due: 11:59pm, Monday, April 27, 2020
+### Demo Due: 11:59pm, Monday, April 27, 2020
 
 ## Overview <a name="overview"></a>
 

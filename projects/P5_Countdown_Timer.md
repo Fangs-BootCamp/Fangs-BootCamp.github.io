@@ -1,20 +1,35 @@
 # Project 3: Timer
 
-## E210/B441, Spring 2021 Version 2021.
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [Timers](#timers)
+    - [State Machine Verilog Template](#state-machine-verilog-template)
+    - [Testbenches for Sequential Logic](#testbenches-for-sequential-logic)
+3. [Assignment Description] (#assignment-description)
+    - [Timer](#timer)
+    - [Auto-Reloading Countdown Timer](#auto-reloading-countdown-timer)
+    - [Toggler](#toggler)
+    - [Top-Level](#top-level)
+    - [Testbenches](#testbenches)
+    - [Constraints](#constraints)
+4. [Evaluation]
 
-## Autograder Due: FIXME
+### E210/B441, Spring 2021 Version 2021.
 
-## Demo Due: FIXME
+### Autograder Due: FIXME
 
-## Overview
+### Demo Due: FIXME
+
+## Overview <a name="overview"></a>
 
 In this lab you practice designing simple state machines by implementing an auto-reloading
 timer. This can be used to introduce fixed time delays into your circuits. You will then use this
 timer to make an LED blink at various frequencies.
 
-## Background
+## Background <a name="background"></a>
 
-### Timers
+### Timers <a name="timers"></a>
 
 Timers are specialized clocks used for measuring
 elapsed time. One example of a mechanical kitchen
@@ -46,7 +61,7 @@ Just like your kitchen timer, most timers can be “reloaded” with a new value
 counting all over again. Some counters are even “auto-reloaded”. When these auto-reloaded
 timers “trigger” they automatically restart the count.
 
-### State Machine Verilog Template
+### State Machine Verilog Template <a name="state-machine-verilog-template"></a>
 
 Building state machines in Verilog requires **closely following a special form** , or template, that
 we have demonstrated below. <b>Be warned: the tools do not enforce this template, it is up to you
@@ -127,7 +142,7 @@ module SimpleStateMachine(
 endmodule
 ```
 
-### Testbenches for Sequential Logic
+### Testbenches for Sequential Logic <a name="testbenches-for-sequential-logic"></a>
 
 When constructing testbenches for sequential logic, you may find the `@(negedge clk)`
 formulation helpful. This will execute the simulation <ins>until the next falling edge of the clock
@@ -212,13 +227,13 @@ module testbench;
 endmodule
 ```
 
-## Assignment Description
+## Assignment Description <a name="assignment-description"></a>
 
 For this assignment, you will create a 25-bit auto-reloading timer.
 
 ### UPDATES STOPPED HERE
 
-### Timer:
+### Timer: <a name="timer"></a>
 
 Your first task is to create a Verilog file named timer.sv with a module defined as follows:
 
@@ -258,7 +273,7 @@ In the `DOWN` state, done should be `0`. The module should also do the following
 
 If a `start_request` occurs in the `DOWN` state, it can be ignored.
 
-### Auto-Reloading Countdown Timer
+### Auto-Reloading Countdown Timer <a name="auto-reloading-countdown-timer"></a>
 
 Your next task is to build a reloading timer. This is similar to the kitchen timer above, except it
 auto-magically reloads itself every time it goes off.
@@ -322,7 +337,7 @@ is given below.
 
 ![Reloading Timer State Machine](../images/p5/reloading_timer_state_machine.png)
 
-### Toggler
+### Toggler <a name="toggler"></a>
 
 Just as ‘hello world’ is one of the first things you do in programming, a blinking `LED` is one of the
 first things you do with sequential logic. Therefore, we’re going to create a state machine to
@@ -353,7 +368,7 @@ your state machine should bounce between `PING` and `PONG`. `PING` should output
 `PONG` should output `toggle=1`. It should continue in those two states until a `toggle_stop`
 request returns the machine to the `IDLE` state.
 
-### Top-Level
+### Top-Level <a name="top-level"></a>
 
 Your almost-final task is to create a Verilog file named `top.v` defined as follows. Luckily, we
 decided the above modules were already enough work, and so we’re simply giving you this one.
@@ -390,7 +405,7 @@ Notice that we only have 16 switches, so to make the 25-bit `toggle_value`, we c
 to the end of `sw` to make it a 25-bit number. We’re also only using `led[0]`, but you are welcome
 to repurpose the remaining led’s for testing.
 
-### Testbenches
+### Testbenches <a name="testbenches"></a>
 
 For this project, you need to create two testbenches. <b>We provide a testbench for timer in the
 downloads section.</b> You must create a testbench for `reloading_timer`, and one for
@@ -401,13 +416,13 @@ We encourage code reuse across these testbenches.
 
 <ins>Remember to select “System Verilog” from the “File Type” drop-down menu.</ins>
 
-### Constraints
+### Constraints <a name="constraints"></a>
 
 You will also need to reconfigure your constraints file to align with the top-level module
 declaration. The names should line up properly by default. A reference file is available in the
 Google Drive folder.
 
-## Evaluation
+## Evaluation <a name="evaluation"></a>
 
 The evaluation will have two steps, first submission of your source code and testbench to the
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a

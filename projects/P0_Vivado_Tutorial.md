@@ -1,10 +1,23 @@
 # Project 0: Vivado and Basys3 Tutorial
 
+## Table of Contents
+1. [Description](#description)
+2. [Create a Project](#create-a-project)
+    - [Default Part](#default-part)
+3. [Create Design Source File](#create-design-source-file)
+4. [Create Constraints File](#create-constraints-file)
+5. [Create Simulation File](#create-simulation-file)
+    - [Checkpoint](#checkpoint)
+6. [Running a Simulation](#running-a-simulation)
+7. [Hardware Synthesis](#hardware-synthesis)
+8. [Programming the FPGA](#programming-the-fpga)
+9. [Testing your FPGA](#testing-your-fpga)
+
 ### E210/B441, Spring 2020 Version: 2020.
 
-## NOTE: This project has been depreciated.
+### NOTE: This project has been depreciated.
 
-## Description
+## Description <a name="description"></a>
 
 This tutorial shows the steps in a digital design project using Xilinx Vivado design suite and Digilent 
 Basys 3 FPGA board. You will learn how to use Vivado tool to create a digital design and implement the 
@@ -17,7 +30,7 @@ the slide switch is down, the LED will turn off.
 This is a starter project with very little hands-on work, but it is a good reference if you
 ever forget how to start and complete a lab project.
 
-## Create a project
+## Create a project <a name="create-a-project"></a>
 
 - Start Vivado and create a new project.
 
@@ -30,7 +43,7 @@ ever forget how to start and complete a lab project.
 - You do not need to add any sources at this time.
 - You do not need to add any constraints at this time.
 
-### Default Part
+### Default Part <a name="default-part"></a>
 - Search for part <i>"xc7a35ticpg236-1L."</i>
 
 ![Vivado Basys3 Part](../images/p0/vivado_basys3_part.png)
@@ -40,7 +53,7 @@ ever forget how to start and complete a lab project.
 
 ![Vivado Main Screen](../images/p0/vivado_main_screen.png)
 
-## Create Design Source File
+## Create Design Source File <a name="create-design-source-file"></a>
 
 Now we will add our first Verilog source file
 
@@ -76,7 +89,7 @@ endmodule
 
 - Save the file (Ctrl^S)
 
-## Create Constraints File
+## Create Constraints File <a name="create-constraints-file"></a>
 
 Now we will add our first constraints source file. This tells Vivado how the inputs and outputs of
 the top-level verilog file map to the real inputs and outputs of the Basys3 board.
@@ -99,7 +112,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {led}]
 - This tells Vivado which pins (or `PACKAGE_PIN`) you want your verilog signals `sw` and `led` to map to. A complete listing of what each pin does will be provided for you.
 - Save the file (`Ctrl^S`)
 
-## Create Simulation File (AKA a ‘testbench’)
+## Create Simulation File (AKA a ‘testbench’) <a name="create-simulation-file"></a>
 
 We are now going to run a simulation to ensure that our verilog code is correct.
 
@@ -153,13 +166,13 @@ endmodule
 
 - Save the file (Ctrl^S)
 
-### Checkpoint
+### Checkpoint <a name="checkpoint"></a>
 
 Now we should have all of our source files. Your setup should look like the following:
 
 ![Vivado Full Setup](../images/p0/vivado_full_setup.png)
 
-## Running a Simulation
+## Running a Simulation <a name="running-a-simulation"></a>
 
 Now we are going to run our simulation, and observe the outcomes of our testing.
 
@@ -197,7 +210,7 @@ in our source file.
 - Waveform simulations are a great way to visualize and understand what is happening when problems arise. We will use them frequently in this class. The autograder uses a command-line version of these same simulations for its tests.
 
 
-## Hardware Synthesis
+## Hardware Synthesis <a name="hardware-synthesis"></a>
 
 - Now that we’re (mostly) sure our logic is correct, we can move on to "Synthesis" and programming the FPGA.
 - On the left hand menu select "`SYNTHESIS`" -> <i>"Run Synthesis."</i> If prompted where to launch runs, select "Launch runs on local host". This tells Vivado to run synthesis on your local machine.
@@ -206,7 +219,7 @@ in our source file.
 - After the Implementation is complete, select <i>"Generate Bitstream"</i>. This generates a configuration file that is read by the `FPGA` when it boots up to decide how to configure itself.
 - After the Generate Bitstream is complete, select "Open Hardware Manager".
 
-## Programming the FPGA
+## Programming the FPGA <a name="programming-the-fpga"></a>
 
 This process will (finally) program the FPGA.
 
@@ -220,7 +233,7 @@ This process will (finally) program the FPGA.
 
 - With the bitstream selected, hit “program". This should only take a few seconds.
 
-## Testing your FPGA
+## Testing your FPGA <a name="testing-your-fpga"></a>
 
 You should now be able to test your FPGA. When you flip the right-most switch, the
 corresponding LED should also toggle.

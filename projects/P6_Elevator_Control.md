@@ -1,19 +1,33 @@
 # Project 4: Elevator Control
 
-## E210/B441, Spring 2021 Version 2021.
+## Table of Contents
+1. [Overview](#overview)
+2. [Background](#background)
+    - [7-Segment Display](#sev-seg-display)
+    - [Elevator Simulation](#elevator-simulation)
+3. [Assignment Description](#assignment-description)
+    - [Elevator Controller](#elevator-controller)
+    - [7-Segment Display Driver](#sev-seg-display-driver)
+    - [Slow Clock Driver](#slow-clock-driver)
+    - [Top-Level](#top-level)
+    - [Testbench](#testbench)
+    - [Constraints](#constraints)
+4. [Evaluation](#evaluation)
 
-## Autograder Due: 11:59PM, Friday, March 12th
+### E210/B441, Spring 2021 Version 2021.
 
-## Demo Due: 11:59PM, Friday, March 12th
+### Autograder Due: 11:59PM, Friday, March 12th
 
-## Overview
+### Demo Due: 11:59PM, Friday, March 12th
+
+## Overview <a name="overview"></a> 
 
 In this lab you will practice using state machines by designing and implementing a simulator of a
 4-floor elevator system. You will also learn to use 7-segment displays.
 
-## Background
+## Background <a name="background"></a>
 
-### 7-Segment Display
+### 7-Segment Display <a name="sev-seg-display"></a>
 
 An array of 7 LEDs is used to display decimal digits (0, 1, ... , 9) and alphabetical
 characters (A, b, C, d, E, F, g, etc. ). The display works by illuminating appropriate
@@ -37,7 +51,7 @@ information about the 7-segment display can be found in the Basys3 Manual:
 
 [Basys3 Manual](https://github.com/ENGR210/downloads/raw/master/Basys3_Manual.pdf)
 
-### Elevator Simulation
+### Elevator Simulation <a name="elevator-simulation"></a>
 
 Suppose that a building with four floors has a freight elevator which is used to distribute
 containers of, well let’s just say ‘beverages’. The elevator is initially loaded with enough
@@ -77,11 +91,11 @@ the door closes (figure 2nd from the top), then the elevator travels down to flo
 from the top). It arrives at floor 1 (figure 2nd from the bottom), and finally the doop opens
 (bottom figure).
 
-## Assignment Description
+## Assignment Description <a name="assignment-description"></a>
 
 Your assignment is to create the following Verilog modules and testbenches as specified below.
 
-### Elevator Controller
+### Elevator Controller <a name="elevator-controller"></a>
 
 Create a Verilog file named ElevCtrl.sv which defines a module as follows:
 
@@ -110,7 +124,7 @@ to whichever floor button pressed first, and ignore all additional button presse
 has opened its door. You do not need to worry about multiple buttons being pressed
 simultaneously.</b>
 
-### 7-Segment Display Driver
+### 7-Segment Display Driver <a name="sev-seg-display-driver"></a>
 
 Create a Verilog file named `SevSegDisplay.sv` which defines a module as follows:
 
@@ -133,7 +147,7 @@ the rightmost `LED`.
 <b>Remember: the 7-segment display uses <ins>active low logic</ins>. See above for more details.</b>
 
 
-### Slow Clock Driver
+### Slow Clock Driver <a name="slow-clock-driver"></a>
 
 The slow clock module is used to create a low-frequency clock for simulations, ie the 1-
 seconds clock.
@@ -158,7 +172,7 @@ module SlowClk(
 endmodule
 ```
 
-### Top-Level
+### Top-Level <a name="top-level"></a>
 
 Please use the following `top.sv`.
 
@@ -212,14 +226,14 @@ module top(
 endmodule
 ```
 
-### Testbench
+### Testbench <a name="testbench"></a>
 
 For this project, you need to create two testbenches. One testbench for `SevSegDisplay` and
 one for `ElevCtrl`, called `SevSegDisplay_tb.sv` and `ElevCtrl_tb.sv` respectively.
 
 <b>Remember that testbenches that simulate with an unmodified slowClk are un-usefully slow.</b>
 
-### Constraints
+### Constraints <a name="constraints"></a>
 
 We recommend you copy the default constraints file from here:
 
@@ -228,7 +242,7 @@ We recommend you copy the default constraints file from here:
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
 
-## Evaluation
+## Evaluation <a name="evaluation"></a>
 
 The evaluation will have two steps, first submission of your source code and testbench to the
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a

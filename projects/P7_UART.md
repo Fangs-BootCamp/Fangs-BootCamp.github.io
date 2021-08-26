@@ -3,27 +3,27 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
-    1. [UART](#uart-background)
-    2. [Clock Domains](#clock-domains)
-    3. [Connecting over UART with Screen](#connect-uart)
+    - [UART](#uart-background)
+    - [Clock Domains](#clock-domains)
+    - [Connecting over UART with Screen](#connect-uart)
 3. [Assignment Description](#assignment)
-    1. [UART RX](#rx)
-    2. [UART TX](#tx)
-    3. [UART](#uart-assignment)
-    4. [Seven Segment Driver](#sev-seg)
-    5. [Top Module](#top)
-    6. [Testbench](#testbench)
-    7. [Constraints](#constraints)
+    - [UART RX](#rx)
+    - [UART TX](#tx)
+    - [UART](#uart-assignment)
+    - [Seven Segment Driver](#sev-seg)
+    - [Top Module](#top)
+    - [Testbench](#testbench)
+    - [Constraints](#constraints)
 4. [Evaluation](#evaluation)
 5. [Resources](#resources)
 
-## E210/B441, Spring 2020 Version 2020.
+### E210/B441, Spring 2020 Version 2020.
 
-## Autograder Due: 11:59 PM Monday, April 13, 2020
+### Autograder Due: 11:59 PM Monday, April 13, 2020
 
-## Demo Due: Submit bitstream and constraints on
+### Demo Due: Submit bitstream and constraints on
 
-## Canvas by 11:59 PM Monday, April 13, 2020.
+### Canvas by 11:59 PM Monday, April 13, 2020.
 
 ## Overview <a name="overview"></a>
 
