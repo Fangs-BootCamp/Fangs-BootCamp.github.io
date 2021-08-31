@@ -1,5 +1,7 @@
 # Project 0: Logic Gates
 
+<link rel="stylesheet" href="projects.css">
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
