@@ -1,6 +1,6 @@
 # Project 0: Logic Gates
 
-<link rel="stylesheet" href="projects.css">
+<link rel="stylesheet" href="style.css">
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -24,7 +24,7 @@
 
 ### Due Date: None
 
-## Board/Part Number
+### Board/Part Number
 <div id="partNum">
 XC7A35T-1CPG236C
 </div>
