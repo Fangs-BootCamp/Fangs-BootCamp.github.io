@@ -402,13 +402,3 @@ assert( mynot == 1) else $fatal(1, "mynot");
  This concludes the Vivado tutorial lab.
 
 
-<style>
-board {
-    color:red;
-    font-weight: bold;
-}
-#partNum {
-    color:red;
-    font-weight: bold;
-}
-</style>
