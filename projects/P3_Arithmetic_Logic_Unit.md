@@ -129,7 +129,7 @@ this:
 ```verilog
 always_comb
 begin
-out = **input[2]** ;
+    out = input[2];
 end
 ```
 
