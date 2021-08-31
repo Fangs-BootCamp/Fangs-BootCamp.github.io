@@ -383,7 +383,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 - If you haven't already, <b>make sure your Basys3 board is connected</b>.
 - On the right-hand side, select "Programming and Debug" -> "Open Hardware Manager" -> "Open Target" -> "Autoconnect"
 - This should automatically detect the Basys
-- Now select "Programming and Debug" -> "Open Hardware Manager" -> "Program Device" -> <div id="part_num">'xc7a35t_0'</div>. (Your device might be named differently)
+- Now select "Programming and Debug" -> "Open Hardware Manager" -> "Program Device" -> <div id="partNum">'xc7a35t_0'</div>. (Your device might be named differently)
 - You will need to select your 'bitstream' file. Xilinx did not make this easy. The bitstream is located at './project_0.runs/impl_1/top.bit' within your project. See the example below:
 
 ![Vivado Program Bitstream](../images/p1/vivado_program_bitstream.png)
@@ -401,7 +401,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 
 
 <style>
-#part_num {
+#partNum {
     color:red;
     font-weight: bold;
 }
