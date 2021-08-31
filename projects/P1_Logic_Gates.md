@@ -24,6 +24,11 @@
 
 ### Due Date: None
 
+## Board/Part Number
+<div id="partNum">
+XC7A35T-1CPG236C
+</div>
+
 ## Overview <a name="overview"></a>
 
 This tutorial shows the steps in a digital design project using Xilinx Vivado design suite and
