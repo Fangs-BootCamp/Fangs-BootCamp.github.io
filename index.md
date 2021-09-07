@@ -1,4 +1,4 @@
-Hello World
+Welcome to Verilog Bootcamp
 
 ## Lecture Slides ##
 
