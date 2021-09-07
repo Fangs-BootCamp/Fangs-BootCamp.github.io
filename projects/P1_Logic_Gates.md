@@ -20,9 +20,6 @@
 12. [Programming the FPGA](#programming-the-fpga)
 13. [Testing your FPGA](#testing-your-fpga)
 
-### E210/B441, Spring 2021 Version 2021.0
-
-### Due Date: None
 
 ### Board/Part Number
 <div id="partNum">
@@ -42,6 +39,8 @@ a digital system that uses three basic logic gates: the AND gate, the OR gate, a
 gate. The logic schematic of the digital system is given below.
 
 ![Project Schematic](../images/p1/project_schematic.png)
+
+If you need help you can contact Christopher Sozio through email: christopher.sozio@navy.mil
 
 ## Background <a name="background"></a>
 
@@ -352,27 +351,7 @@ assert( mynot == 1) else $fatal(1, "mynot");
 
 ## Autograder Submission <a name="autograder-submission"></a>
 
- We'll be using an automatic testbench and grading system (Autograder) for the Verilog in this
- course. It will help you debug your code and give you live feedback on your current score for
- the project. Although this project is ungraded, we recommend you test out the autograder to
- make sure it works.
-
-- Using a web-browser, log on to: [Autograder](https://autograder.sice.indiana.edu.)
-
-- <b>Log in using your 'email@iu.edu' Google Account.</b>
-- Select the "`Engr 210 Sping 2021`" class
-- Select "`P0`" from the Projects list
-- You should now be at a page that looks something like this:
-
-![Autograder Homepage](../images/p1/autograder_homepage.png)
-
-- Drag (or upload) both your top.sv and top_tb.sv files into the "submissions" window. <ins>These files can often be found under the "project_1.srcs" subfolder within Vivado.</ins>
-- Click submit.
-- You should now be taken to the 'My Submissions' window, where the results of your submissions will be shown shortly. It should look something like this:
-
-![Autograder My Submissions](../images/p1/autograder_my_submissions.png)
-
-- This page will display the `score` for both the modules that will be used for the `FPGA` (`top.sv`) and also the testbench modules that are used to test the code (`top_tb.sv`).
+Submit to me (Chris Sozio) if you would like. Email: christopher.sozio@navy.mil
 
 ## Hardware Synthesis <a name="hardware-synthesis"></a>
 
