@@ -1,5 +1,9 @@
 Hello World
 
+## Lecture Slides ##
+
+### [PDF Slides](https://github.com/fangs-bootcamp/lectures_pdf) 
+
 ## Projects ##
 
 <!-- [Vivado Tutorial](projects/P0_Vivado_Tutorial.md) -->
