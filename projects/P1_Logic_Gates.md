@@ -26,6 +26,9 @@
 XC7A35T-1CPG236C
 </div>
 
+### RDT&E Machines
+The solution is to put your Vivado Project folder in the "CraneDev" directory. Vivado will not work correctly if your working files are not in the "CraneDev" directory.
+
 ## Overview <a name="overview"></a>
 
 This tutorial shows the steps in a digital design project using Xilinx Vivado design suite and
