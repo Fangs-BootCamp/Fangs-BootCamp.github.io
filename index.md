@@ -1,4 +1,8 @@
-Hello World
+Welcome to Verilog Bootcamp
+
+## Lecture Slides ##
+
+### [PDF Slides](https://github.com/fangs-bootcamp/lectures_pdf) 
 
 ## Projects ##
 
