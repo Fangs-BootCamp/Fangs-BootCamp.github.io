@@ -6,6 +6,7 @@
     - [Demultiplexer](#demultiplexer)
     - [Verilog Submodules](#verilog-submodules)
     - [Tasks in a Testbench](#tasks-in-a-testbench)
+    </ul>
 3. [Assignment Description](#assignment-description)
     - [Decoder](#decoder)
     - [Demultiplexer](#demultiplexer)
@@ -163,19 +164,25 @@ the rows re-arranged:
 
 ![Rearranged Demultiplexer Truth Table](../images/p2/rearranged_demultiplexer_truth_table.png)
 
+<div id="blk">
 What we see is that if `e==0` all of the outputs are always `0`. If `e==1`, then the outputs match
 the decoder exactly. So, that suggests we can use the decoder to generate some of the signals
 required for the demultiplexer.
+</div>
 
 ### Verilog Submodules <a name="verilog-submodules"></a>
 
+<div id="blk">
 Submodules in Verilog allow you to use smaller modules as building blocks for constructing
 more complex modules. Recall from the lecture that we can construct a TwoBelt Alarm system
 by creating two BeltAlarm submodules, as shown below.
+</div>
 
 ![TwoBeltAlarm](../images/p2/twobeltalarm.png)
 
+<div id="blk">
 In Verilog, we recommend using this method to construct submodules:
+</div>
 
 ```verilog
 SubModuleName SubModule_InstanceName (
@@ -184,6 +191,7 @@ SubModuleName SubModule_InstanceName (
 );
 ```
 
+<div id="blk">
 `SubModuleName` is the name as it appears in the submodules verilog file. It will be the same
 for all instances of the submodule. `SubModule_InstanceName` is the name given for a
 particular submodule instance. You can instantiate multiple of the same submodules, but they
@@ -192,6 +200,7 @@ those given in the submodule's verilog file. `localVariableNames` signals must m
 signal in the current module (not the submodule).
 
 If `BeltAlarm` looks like this:
+</div>
 
 ```verilog
 module BeltAlarm(
@@ -203,10 +212,12 @@ module BeltAlarm(
 endmodule
 ```
 
+<div id="blk">
 Then you can create a `TwoBeltAlarm` by instantiating two `BeltAlarm` modules as shown
 below. Notice that there are two `BeltAlarm` modules, but they both have different names,
 `ba_drv` and `ba_pas`. Also, their output is `OR`'ed together to form the output of the overall
 `TwoBeltAlarm` module
+</div>
 
 ```verilog
 module TwoBeltAlarm(
@@ -227,9 +238,11 @@ module TwoBeltAlarm(
 endmodule
 ```
 
+<div id="blk">
 As an optional optimization, if the name inside the parentheses matches the name outside the
 parentheses, like .k(k), you can skip the parentheses, and just write the name, like .k. With the
 optimization, our verilog looks like this:
+</div>
 
 ```
 module TwoBeltAlarm(
@@ -252,6 +265,7 @@ endmodule
 
 ### Tasks in a Testbench <a name="tasks-in-a-testbench"></a>
 
+<div id="blk">
 Using tasks to create an exhaustive testbench will prove useful as the course projects increase
 in difficulty. You may wish to use tasks in this project to begin understanding how they work as
 well as their purpose, however it is not required.
@@ -262,6 +276,7 @@ To use a task you must first define it, here you declare the inputs and outputs 
 operations it should do, and assert statements for any output you would like to check. Then you
 can call the task. For more details on how to use tasks check this link:
 [Nandland](https://www.nandland.com/verilog/examples/example-task-verilog.html)
+</div>
 
 ```verilog
 //Task Declaration
@@ -288,8 +303,10 @@ end
 endmodule
 ```
 
+<div id="blk">
 Here's an example of a task you might find helpful for this project. This will set "test" values for
 `a,b,c,` and `e`. It will then test `d0-d3` against `d0T-d3T` to ensure the output is as expected.
+</div>
 
 ```verilog
 task demux_test;
@@ -305,7 +322,9 @@ task demux_test;
 endtask
 ```
 
+<div id="blk">
 You can call a task from within your initial block just like it's a C function
+</div>
 
 ```verilog
 initial
@@ -324,14 +343,18 @@ end
 
 ## Assignment Description <a name="assignment-description"></a>
 
+<div id="blk">
 For this assignment, you will need to create a 3-8 decoder, then use it as a submodule to create
 a 3-8 demultiplexer. You will also need to create a corresponding testbench.
+</div>
 
 ![Three To Eight Demultiplexer](../images/p2/three_to_eight_demultiplexer.png)
 
 ### Decoder <a name="decoder"></a>
 
+<div id="blk">
 First, start by creating a SystemVerilog file named decoder.sv defined as follows:
+</div>
 
 ```verilog
 module decoder(
@@ -340,14 +363,18 @@ module decoder(
 );
 ```
 
+<div id="blk">
 You will need to assign the correct expressions for the outputs `d0-d7` in a similar pattern as the
 2-4 decoder of the Background section. For example, `d0` should be active when
 `a=0,b=0,c=0, d1` should be active when `a=0,b=0,c=1,` and `d7` should be active when
 `a=1,b=1,c=1`.
+</div>
 
 ### Demultiplexer <a name="demultiplexer"></a>
 
+<div id="blk">
 Now create a `demux.sv` that will serve as your demultiplexer by including the `e` signal.
+</div>
 
 ```verilog
 module demux(
@@ -357,9 +384,11 @@ module demux(
 );
 ```
 
+<div id="blk">
 You will now need to instantiate a decoder submodule within your top-level demultiplexer
 module. See the Background section for an example. Additional signals internal to your
 demultiplexer can be created with the wire command as follows:
+</div>
 
 ```verilog
     wire wire1; //declare a wire
@@ -367,13 +396,17 @@ demultiplexer can be created with the wire command as follows:
     wire wire2 = 'h1; //declare and assign
 ```
 
+<div id="blk">
 Your demultiplexer module will need to modify the outputs for the decoder's `d0-d7` signals for
 its own `d0-d7` outputs. Remember the corresponding `d` output should be `0` when `e==0`, and
 the same as the original decoder when `e == 1`.
+</div>
 
 ### Top <a name="top"></a>
 
+<div id="blk">
 Please use the following `top.sv`. This uses arrays, which we will discuss more in class later.
+</div>
 
 ```verilog
 `timescale 1ns / 1ps
@@ -404,10 +437,14 @@ endmodule
 
 ### Testbenches <a name="testbenches"></a>
 
+<div id="blk">
 You will need to create two testbenches to test your code, one for decoder and one for demux.
+</div>
 
+<div id="blk">
 The first testbench should be named `decoder_tb.sv`. <ins>Remember to select "System Verilog"
 from the "File Type" drop-down menu</ins>. You can use the following starter code:
+</div>
 
 ```verilog
 `timescale 1ns/1ps
@@ -462,8 +499,10 @@ module decoder_tb;
 endmodule
 ```
 
+<div id="blk">
 The Second test bench should be named `demux_tb.sv` <ins>Remember to select "System Verilog"
 from the "File Type" drop-down menu</ins>. You can use the following starter code:
+</div>
 
 ```verilog
 `timescale 1ns / 1ps
@@ -500,52 +539,72 @@ module demux_tb;
 # endmodule
 ```
 
+<div id="blk">
 Your testbench should ensure the correct output for all 16 possible input combinations of `a`, `b`,
 `c`, and `e`. Recall, you can use the following verilog line to test a signal:
+</div>
 
 ```verilog
 assert( led == 0) else $fatal(1, "led==0 Failed");
 ```
 
+<div id="blk">
 We encourage you to use tasks to aid in testing.
+</div>
 
+<div id="blk">
 If you miss an input combination, the autograder will likely detect it during testing.
+</div>
 
 ### Constraints <a name="constraints"></a>
 
+<div id="blk">
 You will also need to reconfigure your constraints file so it uses the correct assignments of
 switches and LEDs. Rather than writing your own, we recommend you copy the default
 constraints file from here:
+</div>
 
 [Basys3 Constraints](https://raw.githubusercontent.com/ENGR210/downloads/master/Basys3_Master.xdc)
 
 
+<div id="blk">
 And edit it for our needs. Specifically, you will need to uncomment the appropriate line to enable
 the various switches and leds needed.
+</div>
 
 ## Evaluation <a name="evaluation"></a>
 
+<div id="blk">
 <b>NOTE: Due to COVID and working remotely, we will skip the demonstration portion of this
 project for Spring'21.</b>
 
 The evaluation will have two steps, first submission of your source code and testbench to the
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
 demonstration for the TA.
+</div>
 
 ### Autograder (100% 70%)
 
+<div id="blk">
 Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Lab 0.
+</div>
 
+<div id="blk">
 You should submit:
-- decoder.sv
-- decoder_tb.sv
-- demux.sv
-- demux_tb.sv
+    <ul>
+        <li> decoder.sv </li>
+        <li> decoder_tb.sv </li>
+        <li> demux.sv </li>
+        <li> demux_tb.sv </li>
+    </ul>
+</div>
 
 ### Demonstration (30%)
 
+<div id="blk">
 Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
 You will not receive full points until the TA has approved your demonstration.
+</div>
 
 
 
