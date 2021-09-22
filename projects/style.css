@@ -1,10 +1,16 @@
 #partNum {
     color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 25px;
     background-color: red;
     font-weight: bold;
     font-size: 20px;
 }
 
-#blacktext {
+#blk {
     color: black;
 }
