@@ -150,20 +150,24 @@ To launch Vivado, you should only need to type 'vivado' into the command line:
 ![Vivado Create Project Screen](../images/p1/vivado_create_project_screen.png)
 
 <div id="blk">
-- Follow the wizard. Browse and select a folder in which your project will be created.
-- Give a name to your project, for example `Project1`.
-- Check "Create project subdirectory."
-- For Project Type, select "`RTL Project.`"
-- You do not need to add any sources at this time.
-- You do not need to add any constraints at this time.
-- Search for part <i>"xc7a35ticpg236-1L."</i>
+    <ul>
+        <li> Follow the wizard. Browse and select a folder in which your project will be created. </li>
+        <li> Give a name to your project, for example `Project1`. </li>
+        <li> Check "Create project subdirectory." </li>
+        <li> For Project Type, select "`RTL Project.`" </li>
+        <li> You do not need to add any sources at this time. </li>
+        <li> You do not need to add any constraints at this time. </li>
+        <li> Search for part <i>"xc7a35ticpg236-1L."</i> </li>
+    </ul>
 </div>
 
 ![Vivado Basys3 Part](../images/p1/vivado_basys3_part.png)
 
 <div id="blk">
-- Now click 'Finish'
-- Your screen should look like this:
+    <ul>
+        <li> Now click 'Finish' </li>
+        <li> Your screen should look like this: </li>
+    </ul>
 </div>
 
 ![Vivado Main Screen](../images/p1/vivado_main_screen.png)
@@ -175,26 +179,32 @@ Now we will add our first SystemVerilog source file
 </div>
 
 <div id="blk">
-- Right click on "`Add Sources`" on the left side window.
-- Check "`Add` or create design sources", then "Next."
-- Click "`+`" on the left hand menu, and select "`Create` file." In the dialog box enter the name of the file, to make it easier, give it the name "<b>top.sv</b>" This will be our 'top'-level 'verilog' file.
-- <b>Select 'System Verilog' from the 'File type' Menu.</b> The "System" Verilog extension lets us use modern Verilog features. We will discuss this more later in the class. If you forget to do this, you can modify the File type later through the 'properties' menu.
-- Click "`Finish`."
-- It should look something like this:
+    <ul>
+        <li> Right click on "`Add Sources`" on the left side window. </li>
+        <li> Check "`Add` or create design sources", then "Next." </li>
+        <li> Click "`+`" on the left hand menu, and select "`Create` file." In the dialog box enter the name of the file, to make it easier, give it the name "<b>top.sv</b>" This will be our 'top'-level 'verilog' file. </li>
+        <li> <b>Select 'System Verilog' from the 'File type' Menu.</b> The "System" Verilog extension lets us use modern Verilog features. We will discuss this more later in the class. If you forget to do this, you can modify the File type later through the 'properties' menu. </li>
+        <li> Click "`Finish`." </li>
+        <li> It should look something like this: </li>
+    </ul>
 </div>
 
 ![Vivado Add Source](../images/p1/vivado_add_source.png)
 
 <div id="blk">
-- If you get a "`Define Module`" prompt, just click "`OK`".
-- File "`top.sv`" is now in `Design Sources` under the `Project Manager Window`.
+    <ul>
+        <li> If you get a "`Define Module`" prompt, just click "`OK`". </li>
+        <li> File "`top.sv`" is now in `Design Sources` under the `Project Manager Window`. </li>
+    </ul>
 </div>
 
 ![Vivado Project Manager](../images/p1/vivado_project_manager.png)
 
 <div id="blk">
-- Double click on <i>"top.sv"</i> is the <i>Design Sources</i>.
-- Enter the following `Verilog` statements:
+    <ul>
+        <li> Double click on <i>"top.sv"</i> is the <i>Design Sources</i>. </li>
+        <li> Enter the following `Verilog` statements: </li>
+    </ul>
 </div>
 
 ```verilog
@@ -212,14 +222,18 @@ endmodule
 ```
 
 <div id="blk">
-- This `code` has two inputs (a and b) and three outputs (`myAND`, `myOR`, and `myNOT`). The `assign` statements tell the `FPGA` how to map the output signals given the input signals. In this `case`, we are using boolean logic operations (`&`, `|`, and `~`) to compute the `logical and, or,` and `not` of the input signals.
-- When you are done it should look something like this:
+    <ul>
+        <li> This `code` has two inputs (a and b) and three outputs (`myAND`, `myOR`, and `myNOT`). The `assign` statements tell the `FPGA` how to map the output signals given the input signals. In this `case`, we are using boolean logic operations (`&`, `|`, and `~`) to compute the `logical and, or,` and `not` of the input signals. </li>
+        <li> When you are done it should look something like this: </li>
+    </ul>
 </div>
 
 ![Vivado Verilog](../images/p1/vivado_verilog.png)
 
 <div id="blk">
-- Save the file (`Ctrl^S`)
+    <ul>
+        <li> Save the file (`Ctrl^S`) </li>
+    </ul>
 </div>
 
 ## Creating a Constraints File <a name="creating-a-constraints-file"></a>
@@ -238,13 +252,15 @@ the verilog code map to the real inputs and outputs of the Basys3 board.
 | myOR | led |
 
 <div id="blk">
-- Click on <i>"Add Sources."</i>
-- Select <i>"Add or create constraints"</i>
-- Click `+` on the left hand menu, and select <i>"Create file."</i> In the dialog box enter the name of the file, to make it easier, give it a name <i><b>"constraints.xdc"</b></i>
-- Click <i>"Finish"</i>
-- File <i>"constraints.xdc"</i> is now in <i>Constraints -> constrs_1</i> under the `Project Manager Window`.
-- Double click on <i>"constraints.xdc"</i>
-- Enter the following statements:
+    <ul>
+        <li> Click on <i>"Add Sources."</i> </li>
+        <li> Select <i>"Add or create constraints"</i> </li>
+        <li> Click `+` on the left hand menu, and select <i>"Create file."</i> In the dialog box enter the name of the file, to make it easier, give it a name <i><b>"constraints.xdc"</b></i> </li>
+        <li> Click <i>"Finish"</i> </li>
+        <li> File <i>"constraints.xdc"</i> is now in <i>Constraints -> constrs_1</i> under the `Project Manager Window`. </li>
+        <li> Double click on <i>"constraints.xdc"</i> </li>
+        <li> Enter the following statements: </li>
+    </ul>
 </div>
 
 ```
@@ -261,8 +277,10 @@ set_property PACKAGE_PIN U19 [get_ports {myNOT}]
 ```
 
 <div id="blk">
-- This tells Vivado which physical pins (or `PACKAGE_PIN`) you want your verilog signals to map to. A complete listing of what each pin does will be provided for you.
-- Save the file (`Ctrl^S`)
+    <ul>
+        <li> This tells Vivado which physical pins (or `PACKAGE_PIN`) you want your verilog signals to map to. A complete listing of what each pin does will be provided for you. </li>
+        <li> Save the file (`Ctrl^S`) </li>
+    </ul>
 </div>
 
 <div id="blk">
@@ -277,16 +295,18 @@ We are now going to run a simulation to ensure that our verilog code is correct.
 </div>
 
 <div id="blk">
-- Right click "Add Sources."
-- Select "Add or create simulation sources" hit `Next`.
-- Click `+` on the left hand menu, and select "Create file." In the dialog box enter the name of the file, to make it easier give it a name "top_tb.sv". <ins>Select "System Verilog" from the "File Type" drop-down menu</ins>. This will be our "top" level testbench. The "tb" is shorthand for "test bench".
-- Click "`Finish`."
-- Again, if you get a Module popup, just click `OK`.
-- File "top_tb.sv" is in Simulation Sources -> sim_1.
-- Note that "top.sv" is also in Simulation Sources -> sim_1. This is normal.
-- Double click on <i>"top_tb.sv"</i>.
-- Enter the following Verilog statements into top_tb.sv:
-- (please copy + paste this code, don't try to rewrite it)
+    <ul>
+        <li> Right click "Add Sources." </li>
+        <li> Select "Add or create simulation sources" hit `Next`. </li>
+        <li> Click `+` on the left hand menu, and select "Create file." In the dialog box enter the name of the file, to make it easier give it a name "top_tb.sv". <ins>Select "System Verilog" from the "File Type" drop-down menu</ins>. This will be our "top" level testbench. The "tb" is shorthand for "test bench". </li>
+        <li> Click "`Finish`." </li>
+        <li> Again, if you get a Module popup, just click `OK`. </li>
+        <li> File "top_tb.sv" is in Simulation Sources -> sim_1. </li>
+        <li> Note that "top.sv" is also in Simulation Sources -> sim_1. This is normal. </li>
+        <li> Double click on <i>"top_tb.sv"</i>. </li>
+        <li> Enter the following Verilog statements into top_tb.sv: </li>
+        <li> (please copy + paste this code, don't try to rewrite it) </li>
+    </ul>
 </div>
 
 ```verilog
@@ -346,7 +366,9 @@ endmodule
 ```
 
 <div id="blk">
-- Save the file (`Ctrl^S`)
+    <ul>
+        <li> Save the file (`Ctrl^S`) </li>
+    </ul>
 </div>
 
 ## Project Checkpoint <a name="project-checkpoint"></a>
@@ -365,21 +387,27 @@ outputs of our verilog module.
 </div>
 
 <div id="blk">
-- On the left hand menu select <i>"SIMULATION" -> "Run Simulation"</i>, then "Run Behavioral Simulation."
-- This will take a few seconds
-- When it is finished, you should get a window that looks something like this in the bottom window. Note the `@@@Passed`. This means our simulation, well, passed.
+    <ul>
+        <li> On the left hand menu select <i>"SIMULATION" -> "Run Simulation"</i>, then "Run Behavioral Simulation." </li>
+        <li> This will take a few seconds </li>
+        <li> When it is finished, you should get a window that looks something like this in the bottom window. Note the `@@@Passed`. This means our simulation, well, passed. </li>
+    </ul>
 </div>
 
 ![Vivado Simulation Console](../images/p1/vivado_simulation_console.png)
 
 <div id="blk">
-- Now let's try to understand <i>why</i> it passed. For that, we need to look at the "Wave Window". Vivado automatically created one for you (circled below). Click on it.
+    <ul>
+        <li> Now let's try to understand <i>why</i> it passed. For that, we need to look at the "Wave Window". Vivado automatically created one for you (circled below). Click on it. </li>
+    </ul>
 </div>
 
 ![Vivado Click Waveform Tab](../images/p1/vivado_click_waveform_tab.png)
 
 <div id="blk">
-- It should look something like this:
+    <ul>
+        <li> It should look something like this: </li>
+    </ul>
 </div>
 
 ![Vivado Non Zoomed Out Waveform](../images/p1/vivado_non_zoomed_out_waveform.png)
