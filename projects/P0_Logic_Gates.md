@@ -142,7 +142,9 @@ To launch Vivado, you should only need to type 'vivado' into the command line:
 ## Creating a Vivado Project <a name="creating-a-vivado-project"></a>
 
 <div id="blk">
-- Start Vivado and create a new project.
+    <ul>
+        <li> Start Vivado and create a new project.
+    </ul>
 </div>
 
 ![Vivado Create Project Screen](../images/p1/vivado_create_project_screen.png)
