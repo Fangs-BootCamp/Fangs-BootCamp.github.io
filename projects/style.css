@@ -1,6 +1,10 @@
 #partNum {
-    color: black;
+    color: white;
     background-color: red;
     font-weight: bold;
     font-size: 20px;
+}
+
+#blacktext {
+    color: black;
 }
