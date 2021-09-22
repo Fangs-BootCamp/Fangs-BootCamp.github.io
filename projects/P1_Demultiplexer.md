@@ -6,7 +6,6 @@
     - [Demultiplexer](#demultiplexer)
     - [Verilog Submodules](#verilog-submodules)
     - [Tasks in a Testbench](#tasks-in-a-testbench)
-    </ul>
 3. [Assignment Description](#assignment-description)
     - [Decoder](#decoder)
     - [Demultiplexer](#demultiplexer)
