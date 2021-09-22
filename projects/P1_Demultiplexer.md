@@ -1,3 +1,7 @@
+# Project 1: Demultiplexer
+
+<link rel="stylesheet" href="style.css">
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
