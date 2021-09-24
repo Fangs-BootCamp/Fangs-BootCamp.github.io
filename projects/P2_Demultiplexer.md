@@ -511,7 +511,7 @@ To submit your code,
     ![Autograder Homepage](../images/p2/autograder_homepage.png)
 
 - Drag or upload the files listed below into the submission window.  This files
-  can be found under the "srcs" subfolder in Vivado.  
+  can be found under the sources (`.srcs`) subfolder in your Vivado Project's build folder.  
 
 - You should submit:
   - `decoder.sv`
