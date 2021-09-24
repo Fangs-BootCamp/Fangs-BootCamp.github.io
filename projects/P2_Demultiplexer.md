@@ -1,5 +1,7 @@
 # Project 1: Demultiplexer
 
+<link rel="stylesheet" href="style.css">
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
@@ -17,10 +19,6 @@
 4. [Evaluation](#evaluation)
 
 ### E210/B441, Spring 2021 Version 2021.2
-
-### Autograder Due: 11:59pm, Friday, Jan 29th
-
-### Demo Due: NO DEMO
 
 ## Overview <a name="overview"></a>
 
@@ -501,27 +499,31 @@ the various switches and leds needed.
 
 ## Evaluation <a name="evaluation"></a>
 
-<b>NOTE: Due to COVID and working remotely, we will skip the demonstration portion of this
-project for Spring'21.</b>
+<div id="urlLink">
+   [Autograder](https://ag.lukefahr.org/web/project/2) 
+</div>
 
-The evaluation will have two steps, first submission of your source code and testbench to the
-autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
-demonstration for the TA.
+To submit your code, 
+- Follow the above link to the Autograder website.  
+- Log on using **Any @gmail.com email address** 
+- You should now be at a page that looks something like this: 
 
-### Autograder (100% 70%)
+    ![Autograder Homepage](../images/p2/autograder_homepage.png)
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Lab 0.
+- Drag or upload the files listed below into the submission window.  This files
+  can be found under the "srcs" subfolder in Vivado.  
 
-You should submit:
-- decoder.sv
-- decoder_tb.sv
-- demux.sv
-- demux_tb.sv
+- You should submit:
+  - decoder.sv
+  - decoder_tb.sv
+  - demux.sv
+  - demux_tb.sv
 
-### Demonstration (30%)
+- Click Submit
+- You should now be taken to the ‘My Submissions’ window, where the results of your submissions will be shown shortly.  It should look something like this:
 
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
+    ![Autograder My Submissions](../images/p2/autograder_my_submissions.png)
 
+- This page will display the score for each the modules that are tested as well as an overall score.  
 
 
