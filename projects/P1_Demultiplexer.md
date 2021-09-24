@@ -577,7 +577,6 @@ the various switches and leds needed.
 
 ## Evaluation <a name="evaluation"></a>
 
-<<<<<<< HEAD:projects/P2_Demultiplexer.md
 <div id="urlLink">
    <a href="https://ag.lukefahr.org/web/project/2"> Autograder </a> 
 </div>
@@ -586,20 +585,9 @@ To submit your code,
 - Follow the above link to the Autograder website.  
 - Log on using **Any @gmail.com email address** 
 - You should now be at a page that looks something like this: 
-=======
-<div id="blk">
-<b>NOTE: Due to COVID and working remotely, we will skip the demonstration portion of this
-project for Spring'21.</b>
-
-The evaluation will have two steps, first submission of your source code and testbench to the
-autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
-demonstration for the TA.
-</div>
->>>>>>> 137ebdd525cf32ab1633afd6fd6490524bfc6313:projects/P1_Demultiplexer.md
 
     ![Autograder Homepage](../images/p2/autograder_homepage.png)
 
-<<<<<<< HEAD:projects/P2_Demultiplexer.md
 - Drag or upload the files listed below into the submission window.  This files
   can be found under the sources (`.srcs`) subfolder in your Vivado Project's build folder.  
 
@@ -608,33 +596,11 @@ demonstration for the TA.
   - `decoder_tb.sv`
   - `demux.sv`
   - `demux_tb.sv`
-=======
-<div id="blk">
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Lab 0.
-</div>
-
-<div id="blk">
-You should submit:
-    <ul>
-        <li> decoder.sv </li>
-        <li> decoder_tb.sv </li>
-        <li> demux.sv </li>
-        <li> demux_tb.sv </li>
-    </ul>
-</div>
->>>>>>> 137ebdd525cf32ab1633afd6fd6490524bfc6313:projects/P1_Demultiplexer.md
 
 - Click Submit
 - You should now be taken to the ‘My Submissions’ window, where the results of your submissions will be shown shortly.  It should look something like this:
 
-<<<<<<< HEAD:projects/P2_Demultiplexer.md
     ![Autograder My Submissions](../images/p2/autograder_my_submissions.png)
-=======
-<div id="blk">
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
-</div>
->>>>>>> 137ebdd525cf32ab1633afd6fd6490524bfc6313:projects/P1_Demultiplexer.md
 
 - This page will display the score for each the modules that are tested as well as an overall score.  
 
