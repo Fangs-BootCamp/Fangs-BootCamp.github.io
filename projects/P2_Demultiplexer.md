@@ -500,7 +500,7 @@ the various switches and leds needed.
 ## Evaluation <a name="evaluation"></a>
 
 <div id="urlLink">
-   [Autograder](https://ag.lukefahr.org/web/project/2) 
+   <a href="https://ag.lukefahr.org/web/project/2"> Autograder </a> 
 </div>
 
 To submit your code, 
@@ -514,10 +514,10 @@ To submit your code,
   can be found under the "srcs" subfolder in Vivado.  
 
 - You should submit:
-  - decoder.sv
-  - decoder_tb.sv
-  - demux.sv
-  - demux_tb.sv
+  - `decoder.sv`
+  - `decoder_tb.sv`
+  - `demux.sv`
+  - `demux_tb.sv`
 
 - Click Submit
 - You should now be taken to the ‘My Submissions’ window, where the results of your submissions will be shown shortly.  It should look something like this:
