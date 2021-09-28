@@ -1,5 +1,7 @@
 # Project 2: Arithmetic Logic Unit
 
+<link rel="stylesheet" href="style.css">
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
@@ -21,11 +23,6 @@
     - [Constraints](#constraints)
 4. [Evaluation](#evaluation)
 
-### E210/B441, Spring 2021 Version 2021.
-
-### Autograder Due: 11:59pm, Friday, February 12th
-
-### Demo Due: NO DEMO
 
 ## Overview <a name="overview"></a>
 
@@ -395,44 +392,49 @@ As some of the LED values are unused, we assign them to 0 (off).
 
 <ins><i>Remember to select "System Verilog" from the "File Type" drop-down menu.</i></ins>
 
-##### Testbench <a name="testbench"></a>
+### Testbench <a name="testbench"></a>
 
 For this project, you only need to create a testbench for your ALU. It should be named
 `alu_tb.sv`.
 
 <ins><i>Remember to select "System Verilog" from the "File Type" drop-down menu.</i></ins>
 
-##### Constraints <a name="constraints"></a>
+### Constraints <a name="constraints"></a>
 
 We recommend you copy the default constraints file from here:
 
-[Basys3 Constraints](https://raw.githubusercontent.com/ENGR210/downloads/master/Basys3_Master.xdc)
+[Basys3 Constraints](https://github.com/Fangs-BootCamp/Fangs-BootCamp.github.io/blob/master/src/uart.v)
 
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
 
-### Evaluation <a name="evaluation"></a>
+## Evaluation <a name="evaluation"></a>
 
-<b>NOTE: Due to COVID and working remotely, we will delay the demonstration portion of this
-project until in-person labs resume.</b>
+<div id="urlLink">
+    <a href="https://ag.lukefahr.org/web/project/3">Autograder</a>
+</div>
 
-The evaluation will have two steps, first submission of your source code and testbench to the
-autograder. Second, you will need to synthesize your design, download it to the `FPGA` and do a
-demonstration for the `TA`.
+To submit your code,
+   - Follow the above link to the Autograder website.
+   - Log on using <b>Any @gmail.com email address</b>
+   - You should now be at a page that looks something like this
 
-##### Autograder (100% 70%)
+![Autograder Homepage](../images/p2/autograder_homepage.png)
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Project 1.
+- Drag or upload the files listed below into the submission window. These files can be found under the sources (`.srcs`)
+  subfolder in your Vivado project's build folder.
 
-You should submit:
-- alu.sv
-- alu_tb.sv
-- top.sv
+- You should submit:
+    - `alu.sv`
+    - `alu_tb.sv`
+    - `top.sv`
 
-##### Demonstration (30%)
+- Click Submit
+- You should now be taken to the `My Submissions` window, where the results of your submission will be shown shortly. It
+  should look something like this:
 
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
+![Autograder My Submissions](../images/p2/autograder_my_submissions.png)
 
+- This page will display the score for each of the modules that are tested as well as an overall score.
 
 

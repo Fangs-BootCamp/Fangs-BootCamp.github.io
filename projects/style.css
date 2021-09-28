@@ -8,3 +8,10 @@
 #blk {
     color: black;
 }
+
+#urlLink{
+    color: blue;
+    font-weight: bold;
+    font-size:  32px;
+    text-align:  center;
+}

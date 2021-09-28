@@ -1,3 +1,7 @@
+# Project 1: Demultiplexer
+
+<link rel="stylesheet" href="style.css">
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Background](#background)
@@ -16,30 +20,22 @@
 
 ## Overview <a name="overview"></a>
 
-<div id="blk">
 For this project, you will design and implement a 3-to-8 Demultiplexer. Demultiplexers help
 control the logical flow of the digital circuit, and are used in addressing memory and many types
 of data communication.
-</div>
 
 ## Background <a name="background"></a>
 
-<div id="blk">
 To understand demultiplexers, one should first understand a decoder.
-</div>
 
 ### Decoder <a name="decoder"></a>
 
-<div id="blk">
 A decoder is a combinational circuit with n inputs and 2 n^ outputs. For each combination of
 inputs, one and only one output is logic 1, while all the other outputs are logic 0. For example, a
 decoder with 2 inputs {a, b} will have 4 outputs {d0, d1, d2, d3}. This circuit is also
 sometimes called a " one-hot ", as only one of the outputs is '1' (or hot) at a time.
-</div>
 
-<div id="blk">
 The truth table for the decoder is shown below.
-</div>
 
 | Inputs | Outputs |
 | ----------- | ----------- |
@@ -50,36 +46,28 @@ The truth table for the decoder is shown below.
 | 1 | 0 | 0 | 0 | 1 | 0 |
 | 1 | 1 | 0 | 0 | 0 | 1 |
 
-<div id="blk">
 As each output is '`1`' for only a single combination of inputs, a boolean expression that produces
 a particular output can be constructed by testing for the specific input combination. For
 example, output `d1` is logic <i>1 if and only if</i>:
-</div>
 
 ```
 a = 0
 b = 1
 ```
 
-<div id="blk">
 Thus, we can express `d1` as a boolean logic equation:
-</div>
 
 ```
 d1 = ~a & b
 ```
 
-<div id="blk">
 This corresponds to line number `3` in the above truth table (reproduced below):
-</div>
 
 | a | b | d1 | Boolean Expression: |
 | ----------- | ----------- | ----------- | ----------- |
 | 0 | 1 | 1 | d1 = ~a & b |
 
-<div id="blk">
 We can define the `d0` through `d3` using a set of boolean logic equations:
-</div>
 
 ```
 d0 = ~a & ~b
@@ -88,13 +76,9 @@ d2 = a & ~b
 d3 = a & b
 ```
 
-<div id="blk">
 <b>Note</b> that the notations "<b>~a</b>", "<b>a'</b>", and "<b>ā</b>" are all logical equivalents of the same "<b>NOT(a)</b>".
-</div>
 
-<div id="blk">
 Now let's write some Verilog for that:
-</div>
 
 ```verilog
 module 2_to_4_decoder(
@@ -110,30 +94,23 @@ module 2_to_4_decoder(
 endmodule
 ```
 
-<div id="blk">
 We can also represent the same 2-input decoder using a circuit schematic, shown below. If you
 trace the wires (green lines) you will see the d1 is again equal to `~a & b`.
-</div>
 
 ![Decoder Schematic](../images/p2/decoder_schematic.png)
 
-<div id="blk">
 Notice this is the exact same combination of `NOT` and `AND` that is expressed in the boolean
 equations.
-</div>
 
 #### Block Diagram <a name="block-diagram"></a>
 
-<div id="blk">
 We can abstract our decoder into a "block" that only shows the inputs and outputs. This will
 make it easier to use this block later. The inputs are on the left and the outputs are on the right.
-</div>
 
 ![Decoder](../images/p2/decoder.png)
 
 ### Demultiplexer <a name="demultiplexer"></a>
 
-<div id="blk">
 A demultiplexer is a combinational circuit with <i>1</i> data input, <i>n</i> select inputs and <i>2<sup>n</sup></i> outputs. For
 each combination of select inputs, the data is transferred to the selected output, while the other
 outputs are `0`. It is very similar to a decoder, except the output signal is dependent on an
@@ -143,23 +120,18 @@ The truth table for a 2-to-4 demultiplexer is shown below. It has `1` data input
 (`a` and `b`), and `4` outputs (`d0 - d3`). The '`e`' signal is used to '`e`'nable the selected output
 signal. With a demultiplexer, when <i>a = 1</i> and <i>b = 1</i>, the input `e` is transferred to the output
 `d3`, while other outputs are `0`. This is illustrated with the different colors in the truth table below.
-</div>
 
 ![Demultiplexer Truth Table](../images/p2/demultiplexer_truth_table.png)
 
-<div id="blk">
 We can again express the outputs as a boolean equation. For example, <b>d1 = 1</b> requires `~a &
 b & e`. We express that as:
-</div>
 
 ```
 d1 = ~a & b & e;
 ```
 
-<div id="blk">
 Now let's rearrange the Demultiplexer's truth table a little. This is the <i>exact same</i> table, just with
 the rows re-arranged:
-</div>
 
 ![Rearranged Demultiplexer Truth Table](../images/p2/rearranged_demultiplexer_truth_table.png)
 
@@ -527,27 +499,31 @@ the various switches and leds needed.
 
 ## Evaluation <a name="evaluation"></a>
 
-<b>NOTE: Due to COVID and working remotely, we will skip the demonstration portion of this
-project for Spring'21.</b>
+<div id="urlLink">
+   <a href="https://ag.lukefahr.org/web/project/2"> Autograder </a> 
+</div>
 
-The evaluation will have two steps, first submission of your source code and testbench to the
-autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
-demonstration for the TA.
+To submit your code, 
+- Follow the above link to the Autograder website.  
+- Log on using **Any @gmail.com email address** 
+- You should now be at a page that looks something like this: 
 
-### Autograder (100% 70%)
+    ![Autograder Homepage](../images/p2/autograder_homepage.png)
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Lab 0.
+- Drag or upload the files listed below into the submission window. These files
+  can be found under the sources (`.srcs`) subfolder in your Vivado Project's build folder.  
 
-You should submit:
-- decoder.sv
-- decoder_tb.sv
-- demux.sv
-- demux_tb.sv
+- You should submit:
+  - `decoder.sv`
+  - `decoder_tb.sv`
+  - `demux.sv`
+  - `demux_tb.sv`
 
-### Demonstration (30%)
+- Click Submit
+- You should now be taken to the ‘My Submissions’ window, where the results of your submissions will be shown shortly.  It should look something like this:
 
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
+    ![Autograder My Submissions](../images/p2/autograder_my_submissions.png)
 
+- This page will display the score for each of the modules that are tested as well as an overall score.  
 
 
