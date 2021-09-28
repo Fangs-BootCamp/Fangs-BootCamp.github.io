@@ -403,7 +403,7 @@ For this project, you only need to create a testbench for your ALU. It should be
 
 We recommend you copy the default constraints file from here:
 
-[Basys3 Constraints](https://github.com/Fangs-BootCamp/Fangs-BootCamp.github.io/blob/master/src/uart.v)
+[Basys3 Constraints](https://github.com/Fangs-BootCamp/Fangs-BootCamp.github.io/blob/master/src/master.xdc)
 
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
