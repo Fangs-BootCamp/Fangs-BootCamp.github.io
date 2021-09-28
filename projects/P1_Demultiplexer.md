@@ -343,7 +343,9 @@ module decoder(
 You will need to assign the correct expressions for the outputs `d0-d7` in a similar pattern as the
 2-4 decoder of the Background section. For example, `d0` should be active when
 `a=0,b=0,c=0, d1` should be active when `a=0,b=0,c=1,` and `d7` should be active when
-`a=1,b=1,c=1`.
+`a=1,b=1,c=1`. The truth table for the decoder is provided below:
+
+![Decoder Truth Table](../images/p2/decoder_truth_table.png)
 
 ### Demultiplexer <a name="demultiplexer"></a>
 
