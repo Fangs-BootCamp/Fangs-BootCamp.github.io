@@ -239,7 +239,7 @@ instead “bounce” around while you are trying to change them.
 
 Please add this Verilog module to your project to help “debounce” incoming signals.
 
-[debounce.sv](https://raw.githubusercontent.com/ENGR210/downloads/master/debounce.sv)
+[debounce.sv](https://raw.githubusercontent.com/Fangs-BootCamp/Fangs-BootCamp.github.io/master/src/debounce.sv)
 
 ### Top-Level <a name="top-level"></a>
 
@@ -324,7 +324,7 @@ named `saturating_counter_tb.sv.`
 
 We recommend you copy the default constraints file from here:
 
-[Basys3 Constraints](https://raw.githubusercontent.com/ENGR210/downloads/master/Basys3_Master.xdc)
+[Basys3 Constraints](https://raw.githubusercontent.com/Fangs-BootCamp/Fangs-BootCamp.github.io/master/src/master.xdc)
 
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
