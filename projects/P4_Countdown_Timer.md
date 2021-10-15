@@ -295,10 +295,10 @@ module reloading_timer(
     // MORE CODE HERE!
     //
 
-    reg reloadRequest; //can also be wire
-    reg [24:0] reloadValue; // can also be wire
-    reg [24:0] savedValue;
-    reg [24:0] nextSavedValue;
+    logic reloadRequest; //can also be wire
+    logic [24:0] reloadValue; // can also be wire
+    logic [24:0] savedValue;
+    logic [24:0] nextSavedValue;
 
     //
     // Declare a timer submodule
@@ -353,7 +353,7 @@ module toggler (
     input [24:0] toggle_value,
     input toggle_stop,
 
-    output reg toggle
+    output logic toggle
 );
 ```
 

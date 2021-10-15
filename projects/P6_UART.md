@@ -97,7 +97,7 @@ module synchronizer (
 );
 
     // Create a signal buffer
-    reg [1:0] buff;
+    logic [1:0] buff;
 
     always_ff @ (posedge clk) begin
         buff <= {buff[0], async};
@@ -224,8 +224,8 @@ input clk,
 input rst,
 input [7:0] byte0,
 input [7:0] byte1,
-output reg[6:0] seg,
-output reg[3:0] an
+output logic [6:0] seg,
+output logic [3:0] an
 );
 ```
 

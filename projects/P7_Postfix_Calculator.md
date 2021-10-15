@@ -146,7 +146,7 @@ It is often useful to represent an array of 8-bit (1 byte) values in Verilog. Th
 represented as a 2D array of signals:
 
 ```verilog
-reg [7:0] memory [0:127];
+logic [7:0] memory [0:127];
 ```
 
 Thus, `memory[2]` will access the second (1 byte) value in the memory. `memory[2][3]` will
@@ -192,7 +192,7 @@ module synchronizer (
 );
 
     // Create a signal buffer
-    reg [1:0] buff;
+    logic [1:0] buff;
 
     always @ (posedge clk) begin
         if (async) buff <= 2'b11;
