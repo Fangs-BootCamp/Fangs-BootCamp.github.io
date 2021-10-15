@@ -1,4 +1,4 @@
-# Project 3: Timer
+# Project 4: Timer
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -13,13 +13,7 @@
     - [Top-Level](#top-level)
     - [Testbenches](#testbenches)
     - [Constraints](#constraints)
-4. [Evaluation]
-
-### E210/B441, Spring 2021 Version 2021.
-
-### Autograder Due: FIXME
-
-### Demo Due: FIXME
+4. [Evaluation](#evaluation)
 
 ## Overview <a name="overview"></a>
 
@@ -428,17 +422,8 @@ The evaluation will have two steps, first submission of your source code and tes
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
 demonstration for the TA.
 
-### Autograder (60%)
+### Autograder
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Project 1.
-
-### Demonstration (40%)
-
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
-
-<b>***Demonstration Note***: For the "on board" demonstration you should test inputs
-higher than 4096, testing values lower causes the timer to expire and reload so quickly
-that your eyes cannot perceive the LED blinking.</b>
+Log on to [Autograder](#) and submit your code as per Project 1.
 
 

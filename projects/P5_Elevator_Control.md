@@ -1,4 +1,4 @@
-# Project 4: Elevator Control
+# Project 5: Elevator Control
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -13,12 +13,6 @@
     - [Testbench](#testbench)
     - [Constraints](#constraints)
 4. [Evaluation](#evaluation)
-
-### E210/B441, Spring 2021 Version 2021.
-
-### Autograder Due: 11:59PM, Friday, March 12th
-
-### Demo Due: 11:59PM, Friday, March 12th
 
 ## Overview <a name="overview"></a> 
 
@@ -248,26 +242,6 @@ The evaluation will have two steps, first submission of your source code and tes
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
 demonstration for the TA.
 
-### Autograder (60%)
+### Autograder
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Project 1.
-
-### Demonstration (40%)
-
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
-Demo Instructions:
-
-- Generate the bitstream and program the device as you did for the previous project.
-- Go from floor 1 to floor 2 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 2 to floor 3 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 3 to floor 4 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 4 to floor 3 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 3 to floor 2 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 2 to floor 1 (press the proper buttons, change happens in couple of seconds)
-- Go from floor 1 to floor 2 (press the proper buttons, change happens in couple of seconds)
-- Press Reset button to go floor 1
-    - You will see the door closes and opens between the floors and remains open when you stay on the floor by 7 segment display.
-
-
-
+Log on to [Autograder](#) and submit your code as per Project 1.
