@@ -17,14 +17,6 @@
 4. [Evaluation](#evaluation)
 5. [Resources](#resources)
 
-### E210/B441, Spring 2020 Version 2020.
-
-### Autograder Due: 11:59 PM Monday, April 13, 2020
-
-### Demo Due: Submit bitstream and constraints on
-
-### Canvas by 11:59 PM Monday, April 13, 2020.
-
 ## Overview <a name="overview"></a>
 
 In this lab you will practice using state machines by designing and implementing a UART (or
@@ -97,7 +89,7 @@ module synchronizer (
 );
 
     // Create a signal buffer
-    reg [1:0] buff;
+    logic [1:0] buff;
 
     always_ff @ (posedge clk) begin
         buff <= {buff[0], async};
@@ -224,8 +216,8 @@ input clk,
 input rst,
 input [7:0] byte0,
 input [7:0] byte1,
-output reg[6:0] seg,
-output reg[3:0] an
+output logic [6:0] seg,
+output logic [3:0] an
 );
 ```
 
@@ -309,23 +301,8 @@ autograder. Second, you will need to synthesize your design, download it to the 
 
 demonstration for the TA.
 
-### Autograder (60%)
+### Autograder
 
-Log on to https://autograder.sice.indiana.edu and submit your code as per Project 1.
-
-### Demonstration (40%)
-
-Program your FPGA with your UART and demonstrate your working system to the TA. You will
-
-not receive full points until the TA has approved your demonstration.
-
-Upload your bitstream to Canvas.
-
-## Resources <a name="resources"></a>
-
-https://www.maximintegrated.com/en/app-notes/index.mvp/id/
-
-https://www.devobox.com/img/cms/04.jpg
-
+Log on to [Autograder](#) and submit your code as per Project 1.
 
 

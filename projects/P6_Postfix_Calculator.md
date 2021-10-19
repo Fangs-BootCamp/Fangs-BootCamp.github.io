@@ -19,12 +19,6 @@
 5. [Evaluation](#evaluation)
 6. [Appendix I: Reference UART](appendix-i-reference-uart)
 
-### E210/B441, Spring 2020 Version 2020.
-
-### Autograder Due: 11:59pm, Monday, April 27, 2020
-
-### Demo Due: 11:59pm, Monday, April 27, 2020
-
 ## Overview <a name="overview"></a>
 
 In this lab you will construct a postfix calculator which will receive commands and return values
@@ -146,7 +140,7 @@ It is often useful to represent an array of 8-bit (1 byte) values in Verilog. Th
 represented as a 2D array of signals:
 
 ```verilog
-reg [7:0] memory [0:127];
+logic [7:0] memory [0:127];
 ```
 
 Thus, `memory[2]` will access the second (1 byte) value in the memory. `memory[2][3]` will
@@ -192,7 +186,7 @@ module synchronizer (
 );
 
     // Create a signal buffer
-    reg [1:0] buff;
+    logic [1:0] buff;
 
     always @ (posedge clk) begin
         if (async) buff <= 2'b11;
@@ -365,45 +359,7 @@ The evaluation will have two steps, first submission of your source code and tes
 autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
 demonstration for the TA.
 
-#### Autograder (70%)
+#### Autograder
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per `Project 1`.
-
-#### Demonstration (30%)
-
-Program your FPGA with your calculator and demonstrate your working system to the TA. You
-will not receive full points until the TA has approved your demonstration.
-
-## Appendix I: Reference UART <a name="appendix-i-reference-uart"></a>
-
-If your `UART` module from Project 6 is not functioning correctly, we have provided a correct
-reference implementation for you. You are allowed to utilize this `UART` for subsequent projects.
-
-You will need to download both the files listed below:
-
-[uart.edf](../src/uart.edf)
-
-[uart.v](../src/uart.v)
-
-`uart.edf` is a post-synthesis netlist of a `UART` design. `uart.v` is a “stub” that contains only the
-uart module definition.
-
-In Vivado, you will need to
-- Create a project.
-- Select “Add or Create Design Sources”.
-- Now select both the uart.edf and uart.v files.
-- (Optional, but recommended) Select the “Copy sources to project” checkbox.
-- Select “Finish”
-
-![Add Source](../images/p8/add_source.png)
-
-- Add other sources as normal.
-- Instantiate a uart module as normal.
-- Your “Sources” window should look like this.
-
-![Source List](../images/p8/source_list.png)
-
-- The remaining development, testing, and synthesis steps are unchanged.
-
-
+Log on to [Autograder](#) and submit your code as per `Project 1`.
 

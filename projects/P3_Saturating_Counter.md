@@ -14,12 +14,6 @@
     - [Constraints](#constraints)
 4. [Evaluation](#evaluation)
 
-### E210/B441, Spring 2021 Version 2021.
-
-### Autograder Due: 11:59PM, Friday February 26th
-
-### Demo Due: 11:59PM, Friday February 26th
-
 ## Overview <a name="overview"></a>
 
 In this lab you practice designing simple state machines by implementing a 2-bit saturating
@@ -245,7 +239,7 @@ instead “bounce” around while you are trying to change them.
 
 Please add this Verilog module to your project to help “debounce” incoming signals.
 
-[debounce.sv](https://raw.githubusercontent.com/ENGR210/downloads/master/debounce.sv)
+[debounce.sv](https://raw.githubusercontent.com/Fangs-BootCamp/Fangs-BootCamp.github.io/master/src/debounce.sv)
 
 ### Top-Level <a name="top-level"></a>
 
@@ -330,52 +324,18 @@ named `saturating_counter_tb.sv.`
 
 We recommend you copy the default constraints file from here:
 
-[Basys3 Constraints](https://raw.githubusercontent.com/ENGR210/downloads/master/Basys3_Master.xdc)
+[Basys3 Constraints](https://raw.githubusercontent.com/Fangs-BootCamp/Fangs-BootCamp.github.io/master/src/master.xdc)
 
 You will also need to reconfigure your file to align with the top-level module declaration. The
 names should line up properly by default.
 
 ## Evaluation <a name="evaluation"></a>
 
-<b>NOTE: Due to COVID and working remotely, we will delay the demonstration portion of this
-project until in-person labs resume.</b>
-
-The evaluation will have two steps, first submission of your source code and testbench to the
-autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
-demonstration for the TA.
-
 ### Autograder (70%)
 
-Log on to [Autograder](https://autograder.sice.indiana.edu) and submit your code as per Project 1.
+Log on to [Autograder](https://ag.lukefahr.org/web/project/4) and submit your code as per Project 1.
 
 You should submit:
 - saturating_counter.sv
 - saturating_counter_tb.sv
-
-### Demonstration (30%)
-
-Program your FPGA with your demultiplexer and demonstrate your working system to the TA.
-You will not receive full points until the TA has approved your demonstration.
-
-**For your demonstration, you will need to create a short (~30 second) video and upload it
-to Canvas.**
-
-Please generate the bitstream and program the FPGA as described in Project 0.
-
-After programming your FPGA, you will need to make a video of you using your FPGA board.
-
-<b>For full points, this video <ins>must</ins> include the following sequence (in order):</b>
-- Resetting the FPGA using the center button.
-- Incrementing the counter from 0 to 3, updating the LEDs.
-- Incrementing the counter while already at 3, not updating the LEDs.
-- Decrementing the counter from 3 to 0, updating the LEDs.
-- Decrementing the counter while already at 0, not updating the LEDs.
-- Incrementing the counter from 0 to 2, updating the LEDs,
-- Decrementing the counter from 2 to 1, updating the LEDs,
-- Incrementing the counter from 1 to 3, updating the LEDs.
-
-Upload your video on Canvas. You can submit the video as a media recording (.mp4, .avi) or a
-zip file containing the media recording.
-
-
 
