@@ -244,4 +244,4 @@ demonstration for the TA.
 
 ### Autograder
 
-Log on to [Autograder](#) and submit your code as per Project 1.
+Log on to [Autograder](https://ag.lukefahr.org/web/project/5) and submit your code as per Project 1.
