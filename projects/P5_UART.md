@@ -221,7 +221,7 @@ output logic [3:0] an
 );
 ```
 
-NOTE: You do <ins>not</ins> need to write this module yourself. <b>The code for this module is on Canvas.</b>
+NOTE: You do <ins>not</ins> need to write this module yourself. The code for this module is on [GitHub](https://github.com/Fangs-BootCamp/Fangs-BootCamp.github.io/blob/master/src/SevSegDriver.sv).
 
 ### Top <a name="top"></a>
 
@@ -288,21 +288,16 @@ Remember to select “System Verilog” from the “File Type” drop-down menu.
 ### Constraints <a name="constraints"></a>
 
 You will also need to reconfigure your constraints file to align with the top-level module
-
 declaration. The names should line up properly by default. A reference file is available in the
-
 Google Drive folder.
 
 ## Evaluation <a name="evaluation"></a>
 
 The evaluation will have two steps, first submission of your source code and testbench to the
-
-autograder. Second, you will need to synthesize your design, download it to the FPGA and do a
-
-demonstration for the TA.
+autograder. 
 
 ### Autograder
 
-Log on to [Autograder](#) and submit your code as per Project 1.
+Log on to [Autograder](https://ag.lukefahr.org/web/project/7) and submit your code as per Project 1.
 
 
