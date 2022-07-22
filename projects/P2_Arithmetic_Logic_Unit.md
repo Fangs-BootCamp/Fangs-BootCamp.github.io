@@ -253,7 +253,8 @@ concatenation operator in Verilog to achieve this.
 
 ```verilog
 wire [7:0] a = 8’hff;
-wire [8:0] a9 = { 1’h0, a}; //concatenation of inputs
+wire [8:0] a9; 
+assign a9 = { 1’b0, a}; //concatenation of inputs
 wire [7:0] r;
 wire r9;
 {r9,r} = a9; //concatenation of outputs
